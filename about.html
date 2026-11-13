@@ -12,10 +12,12 @@ body{margin:0;background:#F4F7F8}
 a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:80px;align-items:start}
 .cv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
+.jobs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 64px;font-size:15px;line-height:1.55}
+.jobhead{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
 .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
 input,textarea{font:400 16px Inter,sans-serif;color:#0F1E6F;background:#FFFFFF;border:1px solid #BFCBD2;border-radius:6px;padding:12px 14px;min-height:48px;box-sizing:border-box;width:100%}
 input:focus,textarea:focus{outline:2px solid #1D6B8A;outline-offset:1px}
-@media (max-width:900px){.split,.cv{grid-template-columns:minmax(0,1fr);gap:40px}}
+@media (max-width:900px){.split,.cv,.jobs{grid-template-columns:minmax(0,1fr);gap:40px}}
 @media (max-width:560px){.row{grid-template-columns:minmax(0,1fr)}}
 </style>
 
@@ -43,7 +45,7 @@ input:focus,textarea:focus{outline:2px solid #1D6B8A;outline-offset:1px}
 <div style="display: flex; flex-direction: column; gap: 28px">
 <h1 style="margin: 0; font-family: 'Caveat', cursive; font-weight: 600; font-size: clamp(38px, 4.4vw, 62px); line-height: 1; letter-spacing: 0">Hi, I’m Kelina — Sihan Wei.</h1>
 <p style="margin: 0; font-size: 20px; line-height: 1.55; color: #2A3A55">I’m an illustrator studying at the Maryland Institute College of Art, majoring in Illustration with a minor in Sequential Art. I draw animals, landscapes and organic worlds, and I also design games — building the worlds, characters and creatures that live inside them. Whether it’s a picture book or a planet, I try to give each piece a quiet, emotional story.</p>
-<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #4A6470">Most of my work starts with observation and sketching in colored pencil, graphite and technical pen, where I focus on texture and detail. From there I move into digital, building form and atmosphere with expressive line and natural color. In my game projects, like <i>Vael</i>, I carry the same approach into worldbuilding, character, creature and environment design. I’m working toward a freelance practice and, one day, a studio of my own.</p>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; color: #4A6470">Most of my work starts with observation and sketching in colored pencil, graphite and technical pen, where I focus on texture and detail. From there I move into digital, building form and atmosphere with expressive line and natural color, and my studies in animation and storyboarding help me think about how an image moves and tells a story. In my game projects, like <i>Vael</i>, I carry the same approach into worldbuilding, character, creature and environment design. I’m working toward a freelance practice and, one day, a studio of my own.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px">
 <a href="[RESUME PDF LINK]" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; background: #0F1E6F; color: #F4F7F8; font-size: 15px; font-weight: 500">Download Résumé</a>
 <a href="#contact" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid #0F1E6F; font-size: 15px; font-weight: 500">Get in Touch</a>
@@ -53,31 +55,43 @@ input:focus,textarea:focus{outline:2px solid #1D6B8A;outline-offset:1px}
 </section>
 
 <section style="max-width: 1360px; margin: 0 auto; padding: 0 40px 96px">
-<div class="cv" style="border-top: 1px solid #0F1E6F; padding-top: 40px">
+<div style="border-top: 1px solid #0F1E6F; padding-top: 40px">
+<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #1D6B8A">Experience</h2>
+<ul class="jobs"><li class="job"><div class="jobhead"><strong style="font-weight: 600">Illustration Intern</strong><span style="color: #4A6470; white-space: nowrap">Jan – Apr 2026</span></div><div>Ocean House – The Bemelmans Gallery, Rhode Island, USA</div><p style="margin: 6px 0 0; color: #4A6470">Illustrated a children’s activity book for the Bemelmans exhibition, adapting my style to Ludwig Bemelmans’ visual language, revising with Art Director Hilary Pierce, and preparing vector files for print.</p></li><li class="job"><div class="jobhead"><strong style="font-weight: 600">Brand &amp; Visual Design Intern</strong><span style="color: #4A6470; white-space: nowrap">Jul – Aug 2025</span></div><div>Lenovo, Beijing, China</div><p style="margin: 6px 0 0; color: #4A6470">Designed an original brand character for ThinkBook, adopted for gift sets and merchandise; created promotional posters and visual narratives; provided design direction for 2025 China Open × ThinkPad event merchandise.</p></li><li class="job"><div class="jobhead"><strong style="font-weight: 600">Visual Design Intern</strong><span style="color: #4A6470; white-space: nowrap">Aug – Sep 2024</span></div><div>TCL Electronics, Shenzhen, China</div><p style="margin: 6px 0 0; color: #4A6470">Contributed concepts and storyboards for promotional short films and designed product website layouts and visual systems across three platforms.</p></li><li class="job"><div class="jobhead"><strong style="font-weight: 600">Digital Media Intern</strong><span style="color: #4A6470; white-space: nowrap">Feb – Mar 2023</span></div><div>AOYA Design Company, Shenzhen, China</div><p style="margin: 6px 0 0; color: #4A6470">Created animated scene illustrations in After Effects and Photoshop and contributed to UI/UX layouts for mobile and WeChat mini programs.</p></li></ul>
+</div>
+<div class="cv" style="margin-top: 56px; padding-top: 40px; border-top: 1px solid #D5DEE3">
 <div>
-<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; color: #1D6B8A">Experience</h2>
-<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; font-size: 15px; line-height: 1.5">
-<li><strong style="font-weight: 600">Illustration Assistant</strong><br>Ocean House – The Bemelmans Gallery, Rhode Island<br><span style="color: #4A6470">Jan – Apr 2026</span></li>
-<li><strong style="font-weight: 600">Product Promotion &amp; Content Creation Intern</strong><br>Lenovo, Beijing<br><span style="color: #4A6470">Jul – Aug 2025</span></li>
-<li><strong style="font-weight: 600">Commercial Design Department</strong><br>TCL Electronics, Shenzhen<br><span style="color: #4A6470">Aug – Sep 2024</span></li>
-<li><strong style="font-weight: 600">Product / Design Department</strong><br>Aoya Design Company, Shenzhen<br><span style="color: #4A6470">Feb – Mar 2023</span></li>
+<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #1D6B8A">Education</h2>
+<ul style="list-style: none; margin: 0 0 40px; padding: 0; font-size: 15px; line-height: 1.55">
+<li><strong style="font-weight: 600">Maryland Institute College of Art</strong><br>BFA in Illustration, Minor in Sequential Art<br><span style="color: #4A6470">Sep 2023 – Jul 2027 (Expected)</span><br><span style="color: #4A6470">Dean’s List: Fall 2023, Spring 2024, Spring 2025, Fall 2025</span></li>
+</ul>
+<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #1D6B8A">Awards</h2>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5">
+<li>MICA Competitive Scholarship, 2024 &amp; 2025</li>
+<li>H.C. Andersen Art Award — Bronze Award (Youth Group), 2023</li>
+<li>National Art Honor Society (NAHS) Scholarship, 2023</li>
+<li>MICA Creative Vision Award, 2022</li>
+<li>China Think Big (CTB), 2022</li>
 </ul>
 </div>
 <div>
-<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; color: #1D6B8A">Education</h2>
-<ul style="list-style: none; margin: 0 0 40px; padding: 0; font-size: 15px; line-height: 1.5">
-<li><strong style="font-weight: 600">Maryland Institute College of Art</strong><br>BFA Illustration, Sequential Art Minor<br><span style="color: #4A6470">2023 – [GRAD YEAR]</span></li>
-</ul>
-<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; color: #1D6B8A">Game Jams</h2>
-<ul style="list-style: none; margin: 0; padding: 0; font-size: 15px; line-height: 1.5">
-<li><strong style="font-weight: 600">Global Game Jam 2026</strong><br>“Toward Light”</li>
+<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #1D6B8A">Game Jams</h2>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; font-size: 15px; line-height: 1.55">
+<li><strong style="font-weight: 600">Global Game Jam Yiguang 2026</strong> <span style="color: #4A6470">· Oct 2026</span><br>2D Artist — <i>Toward The Light</i><p style="margin: 6px 0 0; color: #4A6470">Environment art and frame-by-frame fire and explosion animations for a 2D plant-climbing adventure set in a ruined city, delivered in 48 hours on a five-person team across a 12-hour time difference. Hosted by Tencent.</p></li>
+<li><strong style="font-weight: 600">Brackeys Game Jam 2026.2</strong> <span style="color: #4A6470">· Aug 2026</span><br>Game Developer &amp; 2D Artist — <i>CURSE</i><p style="margin: 6px 0 0; color: #4A6470">Co-developed a narrative horror puzzle game in Unity, told entirely through a simulated phone interface, on a four-person team under the theme “Trust No One.”</p></li>
 </ul>
 </div>
 <div>
-<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; color: #1D6B8A">Tools &amp; Media</h2>
-<p style="margin: 0; font-size: 15px; line-height: 1.7">Colored Pencil · Graphite · Technical Pen · Procreate · Photoshop · Illustrator · [ADD/REMOVE]</p>
-<h2 style="margin: 40px 0 24px; font-size: 14px; font-weight: 600; color: #1D6B8A">Available For</h2>
-<p style="margin: 0; font-size: 15px; line-height: 1.7">Book &amp; Children’s Illustration · Game Art &amp; Concept Design · Worldbuilding · Editorial · Packaging &amp; Stickers · Visual Development · Summer 2027 Internships</p>
+<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #1D6B8A">Skills</h2>
+<ul style="list-style: none; margin: 0 0 40px; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.55">
+<li><strong style="font-weight: 600">Visual Design</strong><br>Photoshop · Illustrator · Procreate</li>
+<li><strong style="font-weight: 600">Animation &amp; 3D</strong><br>After Effects · Maya</li>
+<li><strong style="font-weight: 600">UI/UX &amp; Digital</strong><br>Figma · Canva</li>
+<li><strong style="font-weight: 600">Game &amp; Programming</strong><br>Unreal Engine 5 · Unity · Arduino</li>
+<li><strong style="font-weight: 600">Languages</strong><br>Mandarin Chinese (Native) · English (Proficient)</li>
+</ul>
+<h2 style="margin: 0 0 24px; font-size: 14px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: #1D6B8A">Available For</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.7">Book &amp; Children’s Illustration · Game Art &amp; Concept Design · Worldbuilding · Character Design · Editorial · Packaging &amp; Stickers · Summer 2027 Internships</p>
 </div>
 </div>
 </section>
@@ -87,7 +101,7 @@ input:focus,textarea:focus{outline:2px solid #1D6B8A;outline-offset:1px}
 <div style="display: flex; flex-direction: column; gap: 24px">
 <h2 style="margin: 0; font-family: 'Caveat', cursive; font-weight: 600; font-size: clamp(38px, 4.4vw, 62px); line-height: 1; letter-spacing: 0">Say Hello.</h2>
 <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #BFCBD2">For illustration or game art commissions, collaborations or internship opportunities, email me or use the form.</p>
-<a href="mailto:sihanwart@gmail.com" style="font-size: 22px; font-weight: 500; color: #F4F7F8; border-bottom: 1.5px solid #F4F7F8; padding-bottom: 3px; align-self: flex-start">sihanwart@gmail.com</a>
+<a href="mailto:sihanwei777@gmail.com" style="font-size: 22px; font-weight: 500; color: #F4F7F8; border-bottom: 1.5px solid #F4F7F8; padding-bottom: 3px; align-self: flex-start">sihanwei777@gmail.com</a>
 <p style="margin: 0; font-size: 15px; color: #BFCBD2">Baltimore, MD · <a href="https://instagram.com/[YOUR HANDLE]" style="color: #F4F7F8">Instagram</a></p>
 </div>
 <form name="contact" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field" style="display: flex; flex-direction: column; gap: 18px; font-size: 14px">
