@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kelina Wei — Illustration &amp; Game Design</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F7F8}
+a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
+.hero{position:relative;background:#0F1E6F;color:#EAF2F5}
+.hero-img{display:block;width:100%;height:auto}
+.topbar{position:absolute;top:0;left:0;right:0;z-index:2;padding:22px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.topbar a{color:#FFFFFF;text-shadow:0 1px 3px rgba(9,20,80,.55),0 0 16px rgba(9,20,80,.35)}
+.topbar a:hover{color:#FFFFFF;text-decoration:underline;text-underline-offset:6px}
+.intro{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:64px;align-items:end}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 26px;border-radius:999px;font-size:15px;font-weight:600}
+.wave{display:block;width:100%;height:90px}
+.masonry{column-count:3;column-gap:32px}
+.pill{font:500 14px Inter,sans-serif;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #BFCBD2;background:transparent;color:#0F1E6F;cursor:pointer}
+.pill[aria-pressed="true"]{border-color:#0F1E6F;background:#0F1E6F;color:#F4F7F8}
+.cta{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:end}
+.ghead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px;align-items:end}
+.gcard{display:block;width:100%;padding:0;border:0;background:none;text-align:left;font:inherit;color:inherit;cursor:zoom-in}
+.gcard img{transition:opacity .2s}.gcard:hover img{opacity:.9}
+.gcard:focus-visible{outline:2px solid #9FD8C4;outline-offset:4px}
+.ginfo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding:0}
+.ginfo p{margin:0;font-size:15px;line-height:1.65;color:#D5DFF2}
+.glabel{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9FD8C4}
+.vstack{display:flex;flex-direction:column;max-width:1600px;margin:0 auto}
+.sframe{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;line-height:0}
+.sframe img{display:block;width:100%;height:auto}
+.sframe:focus-visible{outline:2px solid #9FD8C4;outline-offset:-4px}
+.ggrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 28px}
+@media (max-width:900px){.ghead,.ginfo{grid-template-columns:minmax(0,1fr);gap:20px}.ggrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.ggrid{grid-template-columns:minmax(0,1fr)}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.card{break-inside:avoid;display:block;width:100%;margin:0 0 40px;padding:0;border:0;background:none;text-align:left;font:inherit;color:inherit;cursor:zoom-in}
+.card:focus-visible{outline:2px solid #1D6B8A;outline-offset:4px}
+.lb{position:fixed;inset:0;z-index:50;background:#F4F7F8;display:grid;grid-template-columns:minmax(0,1fr) 380px;animation:fadein .25s ease}
+.lb-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px;min-width:0;min-height:0}
+.lb-stage>img{display:block;max-width:100%;max-height:calc(100vh - 150px);object-fit:contain}
+.lb-thumbs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.lb-thumb{width:64px;height:64px;padding:0;border:2px solid transparent;border-radius:4px;background:none;cursor:pointer;overflow:hidden;opacity:.6}
+.lb-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.lb-thumb[aria-pressed="true"]{border-color:#0F1E6F;opacity:1}
+.lb-info{border-left:1px solid #D5DEE3;padding:96px 40px 32px;display:flex;flex-direction:column;gap:18px;overflow-y:auto}
+.lb-close{position:absolute;top:16px;right:20px;z-index:2;width:48px;height:48px;border:0;background:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.lb-close:focus{outline:none}.lb-close:focus-visible{outline:2px solid #1D6B8A;border-radius:50%}
+.lb-nav{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:20px;border-top:1px solid #D5DEE3}
+.lb-nav button{font:500 15px Inter,sans-serif;color:#0F1E6F;background:none;border:0;min-height:44px;cursor:pointer;padding:0}
+.lb-nav button:hover{color:#1D6B8A}
+@media (max-width:900px){.lb{grid-template-columns:minmax(0,1fr);overflow-y:auto;align-content:start}.lb-info{border-left:0;border-top:1px solid #D5DEE3;padding:24px}.lb-stage{padding:64px 16px 16px}.lb-stage>img{max-height:68vh}}
+@media (max-width:1000px){.masonry{column-count:2}}
+@media (max-width:760px){.intro,.cta{grid-template-columns:minmax(0,1fr);gap:32px}.masonry{column-count:1}.topbar{padding:16px 20px}.hide-sm{display:none}}
+.card[hidden],.lb[hidden]{display:none}
+</style>
+
+</head>
+<body>
+
+<div style="font-family: Inter, system-ui, sans-serif; color: #0F1E6F; background: #F4F7F8; min-height: 100vh">
+
+<section class="hero">
+<header class="topbar">
+<a href="index.html" style="font-family: 'Caveat', cursive; font-size: 32px; font-weight: 700; letter-spacing: 0">Kelina Wei</a>
+<nav aria-label="Main" style="display: flex; gap: 32px; font-size: 15px; font-weight: 500">
+<a href="#work">Work</a>
+<a href="#game">Game Design</a>
+<a href="about.html">About</a>
+<a href="about.html">Contact</a>
+</nav>
+</header>
+<img class="hero-img" src="img/bones.jpg" alt="Where Bones Become Breath — a girl swims through deep blue water among glowing fish and drifting fish skeletons">
+<div style="max-width: 1360px; margin: 0 auto; padding: 28px 40px 0; display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: #B9C7E8">
+<span><span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; color: #EAF2F5">Where Bones Become Breath</span> &nbsp;·&nbsp; Digital Illustration</span>
+<a href="#work" class="hide-sm" style="color: #B9C7E8">Scroll ↓</a>
+</div>
+<div class="intro" style="max-width: 1360px; margin: 0 auto; padding: 96px 40px 40px">
+<h1 style="margin: 0; font-family: 'Caveat', cursive; font-weight: 600; font-size: clamp(38px, 4.8vw, 70px); line-height: 1; letter-spacing: 0; color: #EAF2F5">Illustrator and game designer building quiet, emotional worlds from nature, myth and memory.</h1>
+<div style="display: flex; flex-direction: column; gap: 18px; font-size: 15px; line-height: 1.6; color: #B9C7E8; padding-bottom: 10px">
+<p style="margin: 0">Illustration BFA, Sequential Art Minor<br>Maryland Institute College of Art · Baltimore, MD</p>
+<p style="margin: 0; display: flex; align-items: center; gap: 10px; color: #EAF2F5; font-weight: 500"><span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #9FD8C4; display: inline-block"></span>Open to Summer 2027 Internships</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px">
+<a href="#work" class="btn" style="background: #9FD8C4; color: #0F1E6F">See the Work</a>
+<a href="mailto:sihanwart@gmail.com" class="btn" style="border: 1px solid #B9C7E8; color: #EAF2F5">Say Hello</a>
+</div>
+</div>
+</div>
+<svg class="wave" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 52 C 180 12, 360 12, 540 44 S 900 88, 1080 54 S 1320 18, 1440 40 L1440 90 L0 90 Z" fill="#F4F7F8"/></svg>
+</section>
+
+<main id="work" style="max-width: 1360px; margin: 0 auto; padding: 72px 40px 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; padding-bottom: 24px; margin-bottom: 40px; border-bottom: 1px solid #D5DEE3">
+<h2 style="margin: 0; font-family: 'Caveat', cursive; font-weight: 600; font-size: 46px; line-height: 1; letter-spacing: 0">Selected Work <span style="font-family: Inter, sans-serif; font-size: 18px; font-weight: 400; color: #4A6470">(<span id="count">15</span>)</span></h2>
+<div role="group" aria-label="Filter projects" style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="pill" aria-pressed="true">All</button><button type="button" class="pill" aria-pressed="false">Illustration</button><button type="button" class="pill" aria-pressed="false">Books &amp; Comics</button><button type="button" class="pill" aria-pressed="false">Children’s</button><button type="button" class="pill" aria-pressed="false">Design &amp; Product</button>
+</div>
+</div>
+<div class="masonry">
+<button type="button" class="card" data-i="0" data-group="Books &amp; Comics" aria-label="Open The Last Angel">
+<img src="img/angel1.jpg" alt="The Last Angel — grayscale book spread of a fallen angel by a reflective, iridescent river" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Last Angel</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Book Illustration</span>
+</span>
+</button>
+<button type="button" class="card" data-i="1" data-group="Illustration" aria-label="Open [TITLE]">
+<img src="img/dogpark-full.jpg" alt="Yellow and white bird’s-eye illustration of a dog park surrounded by a café, flower shop and houses, full of dogs, cats and surprised neighbors" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">[TITLE]</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
+</span>
+</button>
+<button type="button" class="card" data-i="2" data-group="Illustration" aria-label="Open Life Clock">
+<img src="img/lifeclock.jpg" alt="Life Clock — a round clock face filled with glowing blue animal skeletons" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Life Clock</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
+</span>
+</button>
+<button type="button" class="card" data-i="3" data-group="Illustration" aria-label="Open The Moment Before Falling">
+<img src="img/falling.jpg" alt="The Moment Before Falling — intricate pen drawing of a figure reaching upward through clouds and thorns" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Moment Before Falling</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
+</span>
+</button>
+<button type="button" class="card" data-i="4" data-group="Children’s" aria-label="Open Explorer">
+<img src="img/explorer1.jpg" alt="Explorer — a girl with a map stands before a glowing waterfall full of butterflies" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Explorer</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Children’s Series</span>
+</span>
+</button>
+<button type="button" class="card" data-i="5" data-group="Books &amp; Comics" aria-label="Open Hushi 互食">
+<img src="img/hushi-cover.jpg" alt="Hushi — green comic cover with hand-lettered title, centipede and beetle" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Hushi 互食</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Wordless Comic</span>
+</span>
+</button>
+<button type="button" class="card" data-i="6" data-group="Illustration" aria-label="Open Where Bones Become Breath">
+<img src="img/bones.jpg" alt="Where Bones Become Breath — a figure drifting among skeletal fish in deep blue water" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Where Bones Become Breath</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
+</span>
+</button>
+<button type="button" class="card" data-i="7" data-group="Illustration" aria-label="Open Where the Forest Breathes">
+<img src="img/forest.jpg" alt="Where the Forest Breathes — a wide panoramic forest scene in soft greens and gold light" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Where the Forest Breathes</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
+</span>
+</button>
+<button type="button" class="card" data-i="8" data-group="Design &amp; Product" aria-label="Open Hymenocallis Seed Packet">
+<img src="img/seed.jpg" alt="Seed packet design with a fairy among white spider lilies on violet blue" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Hymenocallis Seed Packet</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Packaging</span>
+</span>
+</button>
+<button type="button" class="card" data-i="9" data-group="Books &amp; Comics" aria-label="Open The Moon and Sixpence">
+<img src="img/moon.jpg" alt="The Moon and Sixpence — black and white comic page with a lion and hand-lettered text" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Moon and Sixpence</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Comic</span>
+</span>
+</button>
+<button type="button" class="card" data-i="10" data-group="Illustration" aria-label="Open Ocean Creature">
+<img src="img/ocean.jpg" alt="Ocean Creature — a detailed sea slug drawn in green, gold and gray" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Ocean Creature</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Colored Pencil</span>
+</span>
+</button>
+<button type="button" class="card" data-i="11" data-group="Design &amp; Product" aria-label="Open 2025 Calendar">
+<img src="img/calendar1.jpg" alt="2025 calendar cover with a white snake coiled in flowers on soft pink" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">2025 Calendar</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Product</span>
+</span>
+</button>
+<button type="button" class="card" data-i="12" data-group="Design &amp; Product" aria-label="Open Gazing">
+<img src="img/sticker-gazing.jpg" alt="Gazing sticker sheet with a moth, papaya, heart and figures" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Gazing</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Sticker Sheet</span>
+</span>
+</button>
+<button type="button" class="card" data-i="13" data-group="Illustration" aria-label="Open Buddha Statue">
+<img src="img/buddha1.jpg" alt="Stippled study of a seated wooden statue in warm browns" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Buddha Statue</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Study</span>
+</span>
+</button>
+<button type="button" class="card" data-i="14" data-group="Design &amp; Product" aria-label="Open Others">
+<img src="img/sticker-others.jpg" alt="Others sticker sheet with purple figures, flowers and Chinese lettering" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
+<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
+<span style="font-family: 'Caveat', cursive; font-size: 22px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Others</span>
+<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Sticker Sheet</span>
+</span>
+</button>
+
+</div>
+</main>
+
+<section style="background: #0F1E6F; color: #EAF2F5; margin-top: 80px">
+<svg class="wave" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none" style="transform: scaleY(-1); margin-top: -1px"><path d="M0 52 C 180 12, 360 12, 540 44 S 900 88, 1080 54 S 1320 18, 1440 40 L1440 90 L0 90 Z" fill="#F4F7F8"/></svg>
+<!--game-->
+<div id="game" style="max-width: 1360px; margin: 0 auto; padding: 48px 40px 40px">
+<div class="ghead">
+<div>
+<p style="margin: 0 0 6px; font-size: 14px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9FD8C4">Game Design · Concept Art</p>
+<h2 style="margin: 0; font-family: 'Caveat', cursive; font-weight: 700; font-size: 64px; line-height: .95; letter-spacing: 0">Vael</h2>
+</div>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #D5DFF2">The rich have bought a doorway to peace. On the other side, a consciousness billions of years old is waiting.</p>
+</div>
+</div>
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 40px 48px">
+<div class="ginfo">
+<div><h3 class="glabel">World</h3><p>In the mid-22nd century, an anxious Earth buys calm as a luxury. Threshold Corp sends wealthy clients to Vael, a planet whose spores erase pain — but the whole planet is a single living mind, and it is watching.</p></div>
+<div><h3 class="glabel">Art Direction</h3><p>Inspired by Moebius and <i>Love, Death + Robots</i> Season 3: fine linework, open space, tiny figures in vast landscapes and a soft, restrained palette.</p></div>
+<div><h3 class="glabel">What I Designed</h3><p>Worldbuilding · characters · creatures · vehicle · costumes &amp; props · environments · flora &amp; minerals</p></div>
+</div>
+</div>
+<div class="vstack" aria-label="Vael concept art">
+<button type="button" class="sframe" data-i="15" aria-label="Open Vael"><img src="img/vael1.jpg" alt="Vael, a distant planet glowing in blue and gold above a starfield, with the title VAEL" loading="lazy"></button>
+<button type="button" class="sframe" data-i="16" aria-label="Open Game Design Overview"><img src="img/vael10.jpg" alt="Game design document page with logline, world, characters and gameplay" loading="lazy"></button>
+<button type="button" class="sframe" data-i="17" aria-label="Open Minerals"><img src="img/vael9.jpg" alt="Pink and amber crystal formations and mineral samples" loading="lazy"></button>
+<button type="button" class="sframe" data-i="18" aria-label="Open Lumoryn"><img src="img/vael2.jpg" alt="Three stages of a giant green insect creature: Rooted Cocoon, Shell Sphere and Pulse Walker" loading="lazy"></button>
+<button type="button" class="sframe" data-i="19" aria-label="Open Flora"><img src="img/vael8.jpg" alt="A lineup of alien plants: Veil Lily, Weeping Giant, Lantern Chalice, Pillar Palm and Spire Pod" loading="lazy"></button>
+<button type="button" class="sframe" data-i="20" aria-label="Open Surveying the Forest"><img src="img/vael7.jpg" alt="Shu sends drones over a forest of towering glowing plants with sensor posts and orange spore pods" loading="lazy"></button>
+<button type="button" class="sframe" data-i="21" aria-label="Open Exploring"><img src="img/vael3.jpg" alt="Shu walks into a purple cave lit by glowing crystals" loading="lazy"></button>
+<button type="button" class="sframe" data-i="22" aria-label="Open Shu"><img src="img/vael5.jpg" alt="Turnaround of Shu in a lavender suit with swirling patterns" loading="lazy"></button>
+<button type="button" class="sframe" data-i="23" aria-label="Open TFS-01 Surveyor"><img src="img/vael6.jpg" alt="Turnaround of a white and blue survey suit with helmet and backpack details" loading="lazy"></button>
+<button type="button" class="sframe" data-i="24" aria-label="Open The Threshold Vessel"><img src="img/vael4.jpg" alt="Exterior, interior cutaway and cockpit of a sleek white passenger spaceship" loading="lazy"></button>
+
+</div>
+<!--/game-->
+<div class="cta" style="max-width: 1360px; margin: 0 auto; padding: 64px 40px 72px; border-top: 0; margin-top: 24px">
+<p style="margin: 0; font-family: 'Caveat', cursive; font-weight: 600; font-size: clamp(32px, 3.8vw, 52px); line-height: 1.02; letter-spacing: 0">Book illustration, game art, worldbuilding, packaging and visual development — let’s make something.</p>
+<div style="display: flex; flex-direction: column; gap: 16px; align-items: flex-start">
+<a href="mailto:sihanwart@gmail.com" class="btn" style="background: #9FD8C4; color: #0F1E6F; font-size: 17px">sihanwart@gmail.com</a>
+<a href="about.html" style="font-size: 15px; color: #B9C7E8">About Kelina →</a>
+</div>
+</div>
+<footer style="max-width: 1360px; margin: 0 auto; padding: 28px 40px 36px; border-top: 1px solid rgba(185,199,232,.3); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 13px; color: #B9C7E8">
+<span>© 2026 Kelina Wei. All artwork © the artist.</span>
+<span style="display: flex; gap: 24px"><a href="https://instagram.com/[YOUR HANDLE]" style="color: #B9C7E8">Instagram</a><a href="mailto:sihanwart@gmail.com" style="color: #B9C7E8">Email</a><a href="#work" style="color: #B9C7E8">Back to Top ↑</a></span>
+</footer>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+<button type="button" class="lb-close" id="lb-close" aria-label="Close"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F1E6F" stroke-width="1.8" stroke-linecap="round"><path d="M5 5 L19 19 M19 5 L5 19"/></svg></button>
+<div class="lb-stage"><img id="lb-img" src="" alt=""><div class="lb-thumbs" id="lb-thumbs"></div></div>
+<aside class="lb-info">
+<p id="lb-cat" style="margin: 0; font-size: 14px; font-weight: 500; color: #1D6B8A"></p>
+<h2 id="lb-title" style="margin: 0; font-family: 'Caveat', cursive; font-weight: 600; font-size: 40px; line-height: 1.05; letter-spacing: 0"></h2>
+<p id="lb-desc" style="margin: 0; font-size: 17px; line-height: 1.6; color: #2A3A55"></p>
+<a id="lb-link" href="#" style="font-size: 15px; font-weight: 500; color: #1D6B8A" hidden>View Full Project →</a>
+<div class="lb-nav"><button type="button" id="lb-prev">← Previous</button><span id="lb-pos" style="font-size: 13px; color: #4A6470"></span><button type="button" id="lb-next">Next →</button></div>
+</aside>
+</div>
+
+</div>
+
+<script>
+var ITEMS=[{"title": "The Last Angel", "cat": "Book Illustration", "group": "Books & Comics", "imgs": ["img/angel1.jpg", "img/angel2.jpg", "img/angel3.jpg", "img/angel4.jpg"], "alt": "The Last Angel — grayscale book spread of a fallen angel by a reflective, iridescent river", "desc": "An angel’s descent unfolds through moments of rupture and reflection, tracing the fragile boundary between purity and ruin.", "link": "the-last-angel.html"}, {"title": "[TITLE]", "cat": "Illustration", "group": "Illustration", "imgs": ["img/dogpark-full.jpg"], "alt": "Yellow and white bird’s-eye illustration of a dog park surrounded by a café, flower shop and houses, full of dogs, cats and surprised neighbors", "desc": "[Add a short description]", "link": ""}, {"title": "Life Clock", "cat": "Illustration", "group": "Illustration", "imgs": ["img/lifeclock.jpg"], "alt": "Life Clock — a round clock face filled with glowing blue animal skeletons", "desc": "[Add a short description]", "link": ""}, {"title": "The Moment Before Falling", "cat": "Illustration", "group": "Illustration", "imgs": ["img/falling.jpg"], "alt": "The Moment Before Falling — intricate pen drawing of a figure reaching upward through clouds and thorns", "desc": "A delicate tension between ascent and ruin, where the act of reaching becomes the beginning of change.", "link": ""}, {"title": "Explorer", "cat": "Children’s Series", "group": "Children’s", "imgs": ["img/explorer1.jpg", "img/explorer2.jpg", "img/explorer3.jpg"], "alt": "Explorer — a girl with a map stands before a glowing waterfall full of butterflies", "desc": "A young explorer moves between reality and imagination, guided by small moments of curiosity and wonder.", "link": ""}, {"title": "Hushi 互食", "cat": "Wordless Comic", "group": "Books & Comics", "imgs": ["img/hushi-cover.jpg", "img/hushi-spread.jpg"], "alt": "Hushi — green comic cover with hand-lettered title, centipede and beetle", "desc": "A wordless comic.", "link": ""}, {"title": "Where Bones Become Breath", "cat": "Illustration", "group": "Illustration", "imgs": ["img/bones.jpg"], "alt": "Where Bones Become Breath — a figure drifting among skeletal fish in deep blue water", "desc": "A quiet journey of transformation, where life drifts between memory, body, and time beneath the water.", "link": ""}, {"title": "Where the Forest Breathes", "cat": "Illustration", "group": "Illustration", "imgs": ["img/forest.jpg"], "alt": "Where the Forest Breathes — a wide panoramic forest scene in soft greens and gold light", "desc": "A quiet moment where light, memory, and nature gently come together in a dreamlike forest.", "link": ""}, {"title": "Hymenocallis Seed Packet", "cat": "Packaging", "group": "Design & Product", "imgs": ["img/seed.jpg"], "alt": "Seed packet design with a fairy among white spider lilies on violet blue", "desc": "A decorative seed packaging design that blends botanical illustration with a soft, fairy-tale aesthetic.", "link": ""}, {"title": "The Moon and Sixpence", "cat": "Comic", "group": "Books & Comics", "imgs": ["img/moon.jpg"], "alt": "The Moon and Sixpence — black and white comic page with a lion and hand-lettered text", "desc": "[Add a short description]", "link": ""}, {"title": "Ocean Creature", "cat": "Colored Pencil", "group": "Illustration", "imgs": ["img/ocean.jpg"], "alt": "Ocean Creature — a detailed sea slug drawn in green, gold and gray", "desc": "[Add a short description]", "link": ""}, {"title": "2025 Calendar", "cat": "Product", "group": "Design & Product", "imgs": ["img/calendar1.jpg", "img/calendar2.jpg"], "alt": "2025 calendar cover with a white snake coiled in flowers on soft pink", "desc": "[Add a short description]", "link": ""}, {"title": "Gazing", "cat": "Sticker Sheet", "group": "Design & Product", "imgs": ["img/sticker-gazing.jpg"], "alt": "Gazing sticker sheet with a moth, papaya, heart and figures", "desc": "[Add a short description]", "link": ""}, {"title": "Buddha Statue", "cat": "Study", "group": "Illustration", "imgs": ["img/buddha1.jpg", "img/buddha2.jpg"], "alt": "Stippled study of a seated wooden statue in warm browns", "desc": "[Add a short description]", "link": ""}, {"title": "Others", "cat": "Sticker Sheet", "group": "Design & Product", "imgs": ["img/sticker-others.jpg"], "alt": "Others sticker sheet with purple figures, flowers and Chinese lettering", "desc": "[Add a short description]", "link": ""}, {"title": "Vael", "cat": "Key Art", "imgs": ["img/vael1.jpg"], "alt": "Vael, a distant planet glowing in blue and gold above a starfield, with the title VAEL", "desc": "Vael is a distant planet that has been sending a low-frequency signal into space for billions of years. Threshold Corp sells trips there as the ultimate healing retreat. No one has been told that the planet is alive, and that it is listening.", "link": ""}, {"title": "Game Design Overview", "cat": "Design Document", "imgs": ["img/vael10.jpg"], "alt": "Game design document page with logline, world, characters and gameplay", "desc": "The full design overview: logline, world, design purpose, art direction, characters, gameplay and the core question — would you give up part of yourself to escape pain, or accept all of yourself, scars included, to find real peace?", "link": ""}, {"title": "Minerals", "cat": "Prop Design", "imgs": ["img/vael9.jpg"], "alt": "Pink and amber crystal formations and mineral samples", "desc": "Vael’s crystals form the planet’s bones and nerves. Threshold mines them as precious resources, unaware that every piece cut away is a wound to a living body.", "link": ""}, {"title": "Lumoryn", "cat": "Creature Design", "imgs": ["img/vael2.jpg"], "alt": "Three stages of a giant green insect creature: Rooted Cocoon, Shell Sphere and Pulse Walker", "desc": "Vael’s giant insects are the planet’s eyes. The Rooted Cocoon anchors into the ground through root-like legs, drawing signals from Vael’s nervous system as it grows. The Pulse Walker carries those signals through the flower-like organs on its head, and the Shell Sphere curls into a sealed ball when Vael senses a threat.", "link": ""}, {"title": "Flora", "cat": "Plant Design", "imgs": ["img/vael8.jpg"], "alt": "A lineup of alien plants: Veil Lily, Weeping Giant, Lantern Chalice, Pillar Palm and Spire Pod", "desc": "Vael’s plants fit no category from Earth. Each one is an extension of the planet’s consciousness, sensing and recording every living thing that passes through — from the Veil Lily that opens toward anyone who comes near to the Spire Pod that releases the calming spores filling Vael’s air.", "link": ""}, {"title": "Surveying the Forest", "cat": "Environment", "imgs": ["img/vael7.jpg"], "alt": "Shu sends drones over a forest of towering glowing plants with sensor posts and orange spore pods", "desc": "On Vael’s surface, Shu sends drones over a forest of towering, glowing plants to scan them and collect spore samples. She thinks she is studying the plants. But here every plant is part of Vael, and it is studying her too.", "link": ""}, {"title": "Exploring", "cat": "Environment", "imgs": ["img/vael3.jpg"], "alt": "Shu walks into a purple cave lit by glowing crystals", "desc": "Following Morse’s log, Shu steps into the cave he never dared to enter, where glowing crystals light the way into Vael’s nervous system.", "link": ""}, {"title": "Shu", "cat": "Character Design", "imgs": ["img/vael5.jpg"], "alt": "Turnaround of Shu in a lavender suit with swirling patterns", "desc": "A one-of-a-kind suit made for the protagonist alone. Its flowing swirls echo Vael’s living forms, and the soft lavender sets her apart from the white uniforms of Threshold staff.", "link": ""}, {"title": "TFS-01 Surveyor", "cat": "Costume & Props", "imgs": ["img/vael6.jpg"], "alt": "Turnaround of a white and blue survey suit with helmet and backpack details", "desc": "Standard-issue field gear for Threshold Corp staff sent to survey Vael’s surface and caves. Sealed layers keep the wearer lucid against airborne spores and the planet’s low-frequency hum, while the matte white shell and blue lines echo the company ship.", "link": ""}, {"title": "The Threshold Vessel", "cat": "Vehicle Design", "imgs": ["img/vael4.jpg"], "alt": "Exterior, interior cutaway and cockpit of a sleek white passenger spaceship", "desc": "Threshold Corp’s passenger ship, built to carry wealthy clients to Vael. The matte white ceramic hull with fine glowing lines is designed to look more like a work of art than a vehicle. Once the ship lands, pale root-like threads slowly grow through the floor, and it quietly becomes part of the planet’s body.", "link": ""}], SLIDES=[], NW=15;
+var cards=[].slice.call(document.querySelectorAll('.card'));
+document.querySelectorAll('.pill').forEach(function(b){b.addEventListener('click',function(){
+var f=b.textContent;document.querySelectorAll('.pill').forEach(function(p){p.setAttribute('aria-pressed',p===b?'true':'false')});
+var n=0;cards.forEach(function(c){var show=f==='All'||c.dataset.group===f;c.hidden=!show;if(show)n++});
+document.getElementById('count').textContent=n;});});
+(function(){var N=SLIDES.length,i=0,img=document.getElementById('stage-img'),t;if(!img)return;
+function show(n){i=(n+N)%N;var s=SLIDES[i];var c=img.cloneNode();c.src=s.img;c.alt=s.alt;c.style.objectPosition=s.pos;img.replaceWith(c);img=c;
+document.getElementById('stage-num').textContent='0'+(i+1)+' / 0'+N;document.getElementById('stage-title').textContent=s.title;}
+function auto(){clearInterval(t);t=setInterval(function(){show(i+1)},6500);}
+document.getElementById('stage-prev').onclick=function(){show(i-1);auto();};
+document.getElementById('stage-next').onclick=function(){show(i+1);auto();};
+SLIDES.forEach(function(s){var p=new Image();p.src=s.img;});auto();})();
+(function(){var lb=document.getElementById('lb'),cur=0,sub=0,last=null;
+function vis(){if(cur>=NW){var g=[];for(var j=NW;j<ITEMS.length;j++)g.push(j);return g;}return cards.filter(function(c){return !c.hidden}).map(function(c){return +c.dataset.i});}
+function render(){var x=ITEMS[cur],v=vis(),im=document.getElementById('lb-img');
+im.src=x.imgs[sub];im.alt=x.alt;
+document.getElementById('lb-cat').textContent=x.cat;document.getElementById('lb-title').textContent=x.title;document.getElementById('lb-desc').textContent=x.desc;
+var a=document.getElementById('lb-link');if(x.link){a.href=x.link;a.hidden=false}else{a.hidden=true}
+var th=document.getElementById('lb-thumbs');th.innerHTML='';
+if(x.imgs.length>1){x.imgs.forEach(function(s,n){var b=document.createElement('button');b.type='button';b.className='lb-thumb';b.setAttribute('aria-pressed',n===sub?'true':'false');b.setAttribute('aria-label','Image '+(n+1));
+var m=document.createElement('img');m.src=s;m.alt='';b.appendChild(m);b.onclick=function(){sub=n;render()};th.appendChild(b);});}
+document.getElementById('lb-pos').textContent=(v.indexOf(cur)+1)+' / '+v.length;}
+function open(i){cur=i;sub=0;last=document.activeElement;lb.hidden=false;document.body.style.overflow='hidden';render();document.getElementById('lb-close').focus();}
+function close(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus();}
+function step(d){var v=vis(),k=v.indexOf(cur);cur=v[(k+d+v.length)%v.length];sub=0;render();}
+cards.concat([].slice.call(document.querySelectorAll('.sframe'))).forEach(function(c){c.addEventListener('click',function(){open(+c.dataset.i)})});
+document.getElementById('lb-close').onclick=close;
+document.getElementById('lb-prev').onclick=function(){step(-1)};document.getElementById('lb-next').onclick=function(){step(1)};
+document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);});
+})();
+(function(){var st=document.getElementById('vstrip');if(!st)return;
+function by(d){st.scrollBy({left:d*st.clientWidth*0.8,behavior:'smooth'});}
+document.getElementById('vprev').onclick=function(){by(-1)};document.getElementById('vnext').onclick=function(){by(1)};
+st.addEventListener('wheel',function(e){if(Math.abs(e.deltaY)<=Math.abs(e.deltaX))return;var max=st.scrollWidth-st.clientWidth;
+if((e.deltaY>0&&st.scrollLeft<max-2)||(e.deltaY<0&&st.scrollLeft>2)){e.preventDefault();st.scrollLeft+=e.deltaY;}},{passive:false});
+st.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){by(1);e.preventDefault()}if(e.key==='ArrowLeft'){by(-1);e.preventDefault()}});
+var down=false,sx=0,sl=0,moved=false;
+st.addEventListener('mousedown',function(e){down=true;moved=false;sx=e.pageX;sl=st.scrollLeft;st.style.scrollBehavior='auto';st.style.scrollSnapType='none';});
+window.addEventListener('mouseup',function(){if(down){down=false;st.style.scrollBehavior='';st.style.scrollSnapType='';}});
+st.addEventListener('mousemove',function(e){if(!down)return;var dx=e.pageX-sx;if(Math.abs(dx)>5)moved=true;st.scrollLeft=sl-dx;});
+st.addEventListener('click',function(e){if(moved){e.stopPropagation();e.preventDefault();moved=false;}},true);
+st.addEventListener('dragstart',function(e){e.preventDefault()});
+})();
+</script>
+</body>
+</html>
