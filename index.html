@@ -15,9 +15,11 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 .hbg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(40px) saturate(1.1);opacity:.75}
 .hslide{position:relative;display:block;width:100%;height:100%;object-fit:contain;animation:fadein .45s ease}
 .hstage::before{content:"";position:absolute;left:0;right:0;top:0;height:140px;z-index:1;background:linear-gradient(rgba(9,20,80,.28),rgba(9,20,80,0));pointer-events:none}
-.harrow{position:absolute;top:50%;z-index:2;transform:translateY(-50%);width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.55);background:rgba(15,30,111,.35);color:#FFFFFF;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .2s}
-.harrow:hover{background:rgba(15,30,111,.6)}
-.harrow:focus-visible{outline:2px solid #9FD8C4;outline-offset:3px}
+.harrow{position:absolute;top:50%;z-index:2;transform:translateY(-50%);width:56px;height:56px;padding:0;border:0;background:none;color:#FFFFFF;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;filter:drop-shadow(0 1px 3px rgba(9,20,80,.7)) drop-shadow(0 0 10px rgba(9,20,80,.45));opacity:.9;transition:opacity .2s,transform .2s}
+.harrow svg{width:38px;height:38px}
+.harrow:hover{opacity:1}
+.hprev:hover{transform:translate(-3px,-50%)}.hnext:hover{transform:translate(3px,-50%)}
+.harrow:focus{outline:none}.harrow:focus-visible{outline:2px solid #9FD8C4;outline-offset:2px;border-radius:8px}
 .hprev{left:24px}.hnext{right:24px}
 .hdots{position:absolute;left:0;right:0;bottom:18px;z-index:2;display:flex;justify-content:center;gap:4px}
 .hdot{width:28px;height:28px;padding:0;border:0;background:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
