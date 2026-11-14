@@ -43,6 +43,12 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 .ginfo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding:0}
 .ginfo p{margin:0;font-size:15px;line-height:1.65;color:#D5DFF2}
 .glabel{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9FD8C4}
+.gcard{display:block;color:#EAF2F5;border-radius:6px;overflow:hidden;background:#16267F;transition:transform .25s}
+.gcard img{display:block;width:100%;height:auto}
+.gcard-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 24px;padding:18px 24px;font-size:15px}
+.gcard-meta{color:#B9C7E8}.gcard-cta{font-weight:600;color:#9FD8C4}
+.gcard:hover{color:#EAF2F5;transform:translateY(-3px)}.gcard:hover .gcard-cta{text-decoration:underline;text-underline-offset:5px}
+.gcard:focus-visible{outline:2px solid #9FD8C4;outline-offset:4px}
 .vstack{display:flex;flex-direction:column;max-width:1600px;margin:0 auto}
 .sframe{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;line-height:0}
 .sframe img{display:block;width:100%;height:auto}
@@ -121,25 +127,11 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #D5DFF2">The rich have bought a doorway to peace. On the other side, a consciousness billions of years old is waiting.</p>
 </div>
 </div>
-<div style="max-width: 1360px; margin: 0 auto; padding: 0 40px 48px">
-<div class="ginfo">
-<div><h3 class="glabel">World</h3><p>In the mid-22nd century, an anxious Earth buys calm as a luxury. Threshold Corp sends wealthy clients to Vael, a planet whose spores erase pain — but the whole planet is a single living mind, and it is watching.</p></div>
-<div><h3 class="glabel">Art Direction</h3><p>Inspired by Moebius and <i>Love, Death + Robots</i> Season 3: fine linework, open space, tiny figures in vast landscapes and a soft, restrained palette.</p></div>
-<div><h3 class="glabel">What I Designed</h3><p>Worldbuilding · characters · creatures · vehicle · costumes &amp; props · environments · flora &amp; minerals</p></div>
-</div>
-</div>
-<div class="vstack" aria-label="Vael concept art">
-<button type="button" class="sframe" data-i="17" aria-label="Open Vael"><img src="img/vael1.jpg" alt="Vael, a distant planet glowing in blue and gold above a starfield, with the title VAEL" loading="lazy"></button>
-<button type="button" class="sframe" data-i="18" aria-label="Open Game Design Overview"><img src="img/vael10.jpg" alt="Game design document page with logline, world, characters and gameplay" loading="lazy"></button>
-<button type="button" class="sframe" data-i="19" aria-label="Open Minerals"><img src="img/vael9.jpg" alt="Pink and amber crystal formations and mineral samples" loading="lazy"></button>
-<button type="button" class="sframe" data-i="20" aria-label="Open Lumoryn"><img src="img/vael2.jpg" alt="Three stages of a giant green insect creature: Rooted Cocoon, Shell Sphere and Pulse Walker" loading="lazy"></button>
-<button type="button" class="sframe" data-i="21" aria-label="Open Flora"><img src="img/vael8.jpg" alt="A lineup of alien plants: Veil Lily, Weeping Giant, Lantern Chalice, Pillar Palm and Spire Pod" loading="lazy"></button>
-<button type="button" class="sframe" data-i="22" aria-label="Open Surveying the Forest"><img src="img/vael7.jpg" alt="Shu sends drones over a forest of towering glowing plants with sensor posts and orange spore pods" loading="lazy"></button>
-<button type="button" class="sframe" data-i="23" aria-label="Open Exploring"><img src="img/vael3.jpg" alt="Shu walks into a purple cave lit by glowing crystals" loading="lazy"></button>
-<button type="button" class="sframe" data-i="24" aria-label="Open Shu"><img src="img/vael5.jpg" alt="Turnaround of Shu in a lavender suit with swirling patterns" loading="lazy"></button>
-<button type="button" class="sframe" data-i="25" aria-label="Open TFS-01 Surveyor"><img src="img/vael6.jpg" alt="Turnaround of a white and blue survey suit with helmet and backpack details" loading="lazy"></button>
-<button type="button" class="sframe" data-i="26" aria-label="Open The Threshold Vessel"><img src="img/vael4.jpg" alt="Exterior, interior cutaway and cockpit of a sleek white passenger spaceship" loading="lazy"></button>
-
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 40px 72px">
+<a href="vael.html" class="gcard" aria-label="View the Vael project">
+<img src="img/vael-cover.jpg" alt="Vael — cover art of a glowing blue and gold planet in a starry sky">
+<span class="gcard-bar"><span class="gcard-meta">Worldbuilding · Characters · Creatures · Environments · Vehicle</span><span class="gcard-cta">View Project →</span></span>
+</a>
 </div>
 <!--/game-->
 <svg class="wave" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 52 C 180 12, 360 12, 540 44 S 900 88, 1080 54 S 1320 18, 1440 40 L1440 90 L0 90 Z" fill="#F4F7F8"/></svg>
