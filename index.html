@@ -327,12 +327,17 @@ var a=document.getElementById('lb-link');if(x.link){a.href=x.link;a.hidden=false
 var th=document.getElementById('lb-thumbs');th.innerHTML='';
 if(M.length>1){M.map(function(m){return m.v?m.p:m.s}).forEach(function(s,n){var b=document.createElement('button');b.type='button';b.className='lb-thumb';b.setAttribute('aria-pressed',n===sub?'true':'false');b.setAttribute('aria-label','Image '+(n+1));
 var m=document.createElement('img');m.src=s;m.alt='';b.appendChild(m);b.onclick=function(){sub=n;render()};th.appendChild(b);});}
-document.getElementById('lb-pos').textContent=(v.indexOf(cur)+1)+' / '+v.length;}
+document.getElementById('lb-pos').textContent=(v.indexOf(cur)+1)+' / '+v.length;
+if(location.hash!=='#'+slug(x)){try{history.replaceState(null,'','#'+slug(x))}catch(e){}}document.title=x.title+' — Kelina Wei';}
+function slug(x){return x.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+var T0=document.title;
+function fromHash(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;for(var j=0;j<NW;j++){if(slug(ITEMS[j])===h){if(lb.hidden||cur!==j)open(j);return}}if(!lb.hidden)close(1);}
 function open(i){cur=i;sub=0;last=document.activeElement;lb.hidden=false;document.body.style.overflow='hidden';render();document.getElementById('lb-close').focus();}
-function close(){var vd=document.getElementById('lb-vid');vd.pause&&vd.pause();lb.hidden=true;document.body.style.overflow='';if(last)last.focus();}
+function close(keep){var vd=document.getElementById('lb-vid');vd.pause&&vd.pause();lb.hidden=true;document.body.style.overflow='';document.title=T0;if(keep!==1){try{history.replaceState(null,'',location.pathname+'#work')}catch(e){}}if(last&&last.focus)last.focus();}
 function step(d){var v=vis(),k=v.indexOf(cur);cur=v[(k+d+v.length)%v.length];sub=0;render();}
 cards.concat([].slice.call(document.querySelectorAll('.sframe'))).forEach(function(c){c.addEventListener('click',function(){open(+c.dataset.i)})});
-document.getElementById('lb-close').onclick=close;
+document.getElementById('lb-close').onclick=function(){close()};
+window.addEventListener('hashchange',fromHash);fromHash();
 document.getElementById('lb-prev').onclick=function(){step(-1)};document.getElementById('lb-next').onclick=function(){step(1)};
 document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);});
 })();
