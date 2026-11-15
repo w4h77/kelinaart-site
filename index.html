@@ -349,20 +349,20 @@ var WEB=location.protocol!=='file:';
 function setUrl(u){try{history.replaceState(null,'',u)}catch(e){}}
 function slug(x){return x.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 var T0=document.title;
+function where(){var y=scrollY+innerHeight*0.4,w=document.getElementById('work'),g=document.getElementById('game');var top=function(e){return e?e.getBoundingClientRect().top+scrollY:1e9};return y>=top(w)?'/illustration':y>=top(g)?'/game-design':'/'}
 function find(h){for(var j=0;j<NW;j++){if(slug(ITEMS[j])===h)return j}return -1}
 function fromHash(){var h=decodeURIComponent(location.hash.slice(1));if(!h)return;var j=find(h);if(j>=0){if(lb.hidden||cur!==j)open(j);return}if(!lb.hidden)close(1);}
 function fromPath(){var m=location.pathname.replace(/\/+$/,'').match(/^\/(illustration|game-design)(?:\/([^\/]+))?$/);if(!m)return;
-if(m[2]){var j=find(decodeURIComponent(m[2]));if(j>=0){open(j);return}}
+if(m[2]){var j=find(decodeURIComponent(m[2]));if(j>=0){var w=document.getElementById('work');if(w)w.scrollIntoView();open(j);return}}
 var el=document.getElementById(m[1]==='illustration'?'work':'game');if(el)setTimeout(function(){el.scrollIntoView()},60);}
 function open(i){cur=i;sub=0;last=document.activeElement;lb.hidden=false;document.body.style.overflow='hidden';render();document.getElementById('lb-close').focus();}
-function close(keep){var vd=document.getElementById('lb-vid');vd.pause&&vd.pause();lb.hidden=true;document.body.style.overflow='';document.title=T0;if(keep!==1){try{history.replaceState(null,'',WEB?'/illustration':location.pathname+'#work')}catch(e){}}if(last&&last.focus)last.focus();}
+function close(keep){var vd=document.getElementById('lb-vid');vd.pause&&vd.pause();lb.hidden=true;document.body.style.overflow='';document.title=T0;if(keep!==1){try{history.replaceState(null,'',WEB?where():location.pathname+'#work')}catch(e){}}if(last&&last.focus)last.focus();}
 function step(d){var v=vis(),k=v.indexOf(cur);cur=v[(k+d+v.length)%v.length];sub=0;render();}
 cards.concat([].slice.call(document.querySelectorAll('.sframe'))).forEach(function(c){c.addEventListener('click',function(){open(+c.dataset.i)})});
 document.getElementById('lb-close').onclick=function(){close()};
 window.addEventListener('hashchange',fromHash);fromPath();fromHash();
 if(WEB){['vael','grandmas-sunday','round-and-whole'].forEach(function(s){[].forEach.call(document.querySelectorAll('a[href="'+s+'.html"]'),function(a){a.href='/game-design/'+s})});
-[].forEach.call(document.querySelectorAll('a[href="#work"]'),function(a){a.addEventListener('click',function(){setTimeout(function(){setUrl('/illustration')},0)})});
-[].forEach.call(document.querySelectorAll('a[href="#game"]'),function(a){a.addEventListener('click',function(){setTimeout(function(){setUrl('/game-design')},0)})});}
+var tk=0;window.addEventListener('scroll',function(){if(tk)return;tk=setTimeout(function(){tk=0;if(lb.hidden&&location.pathname!==where())setUrl(where())},120)},{passive:true});}
 document.getElementById('lb-prev').onclick=function(){step(-1)};document.getElementById('lb-next').onclick=function(){step(1)};
 document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);});
 })();
