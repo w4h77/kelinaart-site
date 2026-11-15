@@ -38,9 +38,6 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 .pill[aria-pressed="true"]{border-color:#0F1E6F;background:#0F1E6F;color:#F4F7F8}
 .cta{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:end}
 .ghead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:48px;align-items:end}
-.gcard{display:block;width:100%;padding:0;border:0;background:none;text-align:left;font:inherit;color:inherit;cursor:zoom-in}
-.gcard img{transition:opacity .2s}.gcard:hover img{opacity:.9}
-.gcard:focus-visible{outline:2px solid #9FD8C4;outline-offset:4px}
 .ginfo{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding:0}
 .ginfo p{margin:0;font-size:15px;line-height:1.65;color:#D5DFF2}
 .glabel{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9FD8C4}
@@ -50,6 +47,14 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 .gcard-meta{color:#B9C7E8}.gcard-cta{font-weight:600;color:#9FD8C4}
 .gcard:hover{color:#EAF2F5;transform:translateY(-3px)}.gcard:hover .gcard-cta{text-decoration:underline;text-underline-offset:5px}
 .gcard:focus-visible{outline:2px solid #9FD8C4;outline-offset:4px}
+.gsoon-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px}
+.gsoon{display:flex;flex-direction:column;justify-content:space-between;gap:40px;min-height:220px;padding:28px;border:1px dashed rgba(185,199,232,.55);border-radius:6px;color:#EAF2F5;transition:transform .25s,border-color .25s,background .25s}
+.gsoon:hover{color:#EAF2F5;transform:translateY(-3px);border-color:#9FD8C4;background:rgba(159,216,196,.06)}
+.gsoon:focus-visible{outline:2px solid #9FD8C4;outline-offset:4px}
+.gsoon-tag{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9FD8C4}
+.gsoon-title{font-family:'Caveat',cursive;font-weight:700;font-size:44px;line-height:1;letter-spacing:0}
+.gsoon-cta{font-size:15px;font-weight:600;color:#9FD8C4}
+@media (max-width:760px){.gsoon-grid{grid-template-columns:minmax(0,1fr)}.gsoon{min-height:160px;gap:24px}}
 .vstack{display:flex;flex-direction:column;max-width:1600px;margin:0 auto}
 .sframe{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;line-height:0}
 .sframe img{display:block;width:100%;height:auto}
@@ -133,6 +138,16 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 <img src="img/vael-cover.jpg" alt="Vael — cover art of a glowing blue and gold planet in a starry sky">
 <span class="gcard-bar"><span class="gcard-meta">Worldbuilding · Characters · Creatures · Environments · Vehicle</span><span class="gcard-cta">View Project →</span></span>
 </a>
+<div class="gsoon-grid">
+<a href="grandmas-sunday.html" class="gsoon" aria-label="View the Grandma’s Sunday project">
+<span class="gsoon-tag">In Progress</span>
+<span style="display: flex; flex-direction: column; gap: 14px"><span class="gsoon-title">Grandma’s Sunday</span><span class="gsoon-cta">View Project →</span></span>
+</a>
+<a href="round-and-whole.html" class="gsoon" aria-label="View the Round &amp; Whole project">
+<span class="gsoon-tag">In Progress</span>
+<span style="display: flex; flex-direction: column; gap: 14px"><span class="gsoon-title">Round &amp; Whole</span><span class="gsoon-cta">View Project →</span></span>
+</a>
+</div>
 </div>
 <!--/game-->
 <svg class="wave" aria-hidden="true" viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 52 C 180 12, 360 12, 540 44 S 900 88, 1080 54 S 1320 18, 1440 40 L1440 90 L0 90 Z" fill="#F4F7F8"/></svg>
@@ -345,7 +360,7 @@ function step(d){var v=vis(),k=v.indexOf(cur);cur=v[(k+d+v.length)%v.length];sub
 cards.concat([].slice.call(document.querySelectorAll('.sframe'))).forEach(function(c){c.addEventListener('click',function(){open(+c.dataset.i)})});
 document.getElementById('lb-close').onclick=function(){close()};
 window.addEventListener('hashchange',fromHash);fromPath();fromHash();
-if(WEB){[].forEach.call(document.querySelectorAll('a[href="vael.html"]'),function(a){a.href='/game-design/vael'});
+if(WEB){['vael','grandmas-sunday','round-and-whole'].forEach(function(s){[].forEach.call(document.querySelectorAll('a[href="'+s+'.html"]'),function(a){a.href='/game-design/'+s})});
 [].forEach.call(document.querySelectorAll('a[href="#work"]'),function(a){a.addEventListener('click',function(){setTimeout(function(){setUrl('/illustration')},0)})});
 [].forEach.call(document.querySelectorAll('a[href="#game"]'),function(a){a.addEventListener('click',function(){setTimeout(function(){setUrl('/game-design')},0)})});}
 document.getElementById('lb-prev').onclick=function(){step(-1)};document.getElementById('lb-next').onclick=function(){step(1)};
