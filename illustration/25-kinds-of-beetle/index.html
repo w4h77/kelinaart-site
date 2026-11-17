@@ -10,12 +10,12 @@
 <style>
 body{margin:0;background:#0F1E6F}
 a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
-.hero{position:relative;background:linear-gradient(180deg,#0F1E6F 0%,#0F1E6F 26%,#12246F 38%,#152B7B 50%,#1B3688 62%,#22438F 72%,#2B529B 82%,#3461A7 91%,#3D73B6 100%);color:#EAF2F5}
-.bridge{height:520px;background:linear-gradient(180deg,#3D73B6 0%,#4D82BF 14%,#6194C8 28%,#7BA8D2 42%,#99BEDC 56%,#B7D1E5 70%,#D4E3EC 84%,#E9F0F4 93%,#F4F7F8 100%)}
+.hero{position:relative;background:linear-gradient(180deg,#0F1E6F 0%,#0F1E6F 72%,#13266F 78%,#1A3484 84%,#234494 89%,#2D55A3 94%,#3665AE 97%,#3D73B6 100%);color:#EAF2F5}
+.bridge{height:340px;background:linear-gradient(180deg,#3D73B6 0%,#5189C2 16%,#6C9DCD 32%,#8DB5D9 48%,#AEC9E2 64%,#CCDEEA 79%,#E4EDF2 91%,#F4F7F8 100%)}
 .worklane{background:linear-gradient(180deg,#F4F7F8 0%,#F4F7F8 62%,#F1F6F4 76%,#EDF5F1 88%,#E9F4EF 100%)}
 .closing{background:linear-gradient(180deg,#E9F4EF 0%,#DEF1E9 22%,#D2ECE0 44%,#C3E6D7 68%,#B5E1D0 86%,#A9DCC9 100%);color:#123A52}
 .closing a{color:#0F1E6F}.closing .muted{color:#2E5C6E}
-@media (max-width:760px){.bridge{height:300px}}
+@media (max-width:760px){.bridge{height:190px}}
 .hstage{position:relative;height:clamp(420px,44vw,92vh);overflow:hidden;background:#0F1E6F}
 .hbg{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(40px) saturate(1.1);opacity:.75}
 .hslide{position:relative;display:block;width:100%;height:100%;object-fit:contain;animation:fadein .45s ease}
@@ -53,6 +53,9 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 .sintro p{margin:22px auto 0;max-width:540px;font-size:17px;line-height:1.75}
 .rvon .rv{opacity:0;transform:translateY(20px);transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1),color .9s ease}
 .rvon .rv.in{opacity:1;transform:none}
+.rvon .rv1{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.rvon .rv1.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rvon .rv1{opacity:1;transform:none;transition:none}}
 .rvon .sintro h2.rv{transition-delay:.09s}.rvon .sintro p.rv{transition-delay:.18s}
 .rvon .sintro p.rv{color:rgba(128,150,180,.45)}.rvon .sintro p.rv.in{color:inherit}
 .rvon .cta p.rv{transition-delay:.05s}
@@ -130,8 +133,8 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 <span id="stage-num" style="font-variant-numeric: tabular-nums; white-space: nowrap">01 / 04</span>
 </div>
 <div class="intro" style="max-width: 1360px; margin: 0 auto; padding: 96px 40px 40px">
-<h1 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(30px, 3.7vw, 55px); line-height: 1; letter-spacing: 0; color: #EAF2F5">Illustrator and game designer building quiet, emotional worlds from nature, myth and memory.</h1>
-<div style="display: flex; flex-direction: column; gap: 18px; font-size: 15px; line-height: 1.6; color: #B9C7E8; padding-bottom: 10px">
+<h1 class="rv" style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(30px, 3.7vw, 55px); line-height: 1; letter-spacing: 0; color: #EAF2F5">Illustrator and game designer building quiet, emotional worlds from nature, myth and memory.</h1>
+<div class="rv" style="display: flex; flex-direction: column; gap: 18px; font-size: 15px; line-height: 1.6; color: #B9C7E8; padding-bottom: 10px; transition-delay: .1s">
 <p style="margin: 0">Illustration BFA, Sequential Art Minor<br>Maryland Institute College of Art · Baltimore, MD</p>
 <p style="margin: 0; display: flex; align-items: center; gap: 10px; color: #EAF2F5; font-weight: 500"><span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #9FD8C4; display: inline-block"></span>Open to Summer 2027 Internships</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 6px">
@@ -147,16 +150,16 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 <p class="rv" style="color: #B9C7E8">Concept art, worldbuilding and narrative design — from an alien planet that has been listening for billions of years, to a kitchen table shared by two people.</p>
 </div>
 <div style="max-width: 1360px; margin: 0 auto; padding: 48px 40px 72px">
-<a href="vael.html" class="gcard" aria-label="View the Vael project">
+<a href="vael.html" class="gcard rv1" aria-label="View the Vael project">
 <img src="/img/vael-cover.jpg" alt="Vael — cover art of a glowing blue and gold planet in a starry sky">
 <span class="gcard-bar"><span class="gcard-meta"><span style="font-family: 'Bodoni Moda', serif; font-size: 22px; font-weight: 600; color: #EAF2F5; margin-right: 12px">Vael</span>Concept Art · Worldbuilding</span><span class="gcard-cta">View Project →</span></span>
 </a>
 <div class="gsoon-grid">
-<a href="round-and-whole.html" class="gcard" aria-label="View the Round &amp; Whole project">
+<a href="round-and-whole.html" class="gcard rv1" aria-label="View the Round &amp; Whole project">
 <img src="/img/rw1.jpg" alt="Round &amp; Whole cover — a girl resting in a bowl of tangyuan, with two players pressing a shared ball controller" loading="lazy">
 <span class="gcard-bar"><span class="gcard-meta"><span style="font-family: 'Bodoni Moda', serif; font-size: 22px; font-weight: 600; color: #EAF2F5; margin-right: 12px">Round &amp; Whole</span>Two-Player Co-Op Game</span><span class="gcard-cta">View Project →</span></span>
 </a>
-<a href="grandmas-sunday.html" class="gsoon" aria-label="View the Grandma’s Sunday project">
+<a href="grandmas-sunday.html" class="gsoon rv1" aria-label="View the Grandma’s Sunday project">
 <span class="gsoon-tag">In Progress</span>
 <span style="display: flex; flex-direction: column; gap: 14px"><span class="gsoon-title">Grandma’s Sunday</span><span class="gsoon-cta">View Project →</span></span>
 </a>
@@ -180,119 +183,119 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 </div>
 </div>
 <div class="masonry">
-<button type="button" class="card" data-i="0" data-group="Books &amp; Comics" aria-label="Open The Last Angel">
+<button type="button" class="card rv1" data-i="0" data-group="Books &amp; Comics" aria-label="Open The Last Angel">
 <img src="/img/angel1.jpg" alt="The Last Angel — grayscale book spread of a fallen angel by a reflective, iridescent river" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Last Angel</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Book Illustration</span>
 </span>
 </button>
-<button type="button" class="card" data-i="1" data-group="Books &amp; Comics" aria-label="Open Shadow Shop">
+<button type="button" class="card rv1" data-i="1" data-group="Books &amp; Comics" aria-label="Open Shadow Shop">
 <img src="/img/shadowshop.jpg" alt="Shadow Shop book cover — a figure steps toward a glowing shop door as stars burst out, framed in gold baroque ornament" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Shadow Shop</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Book Cover</span>
 </span>
 </button>
-<button type="button" class="card" data-i="2" data-group="Books &amp; Comics" aria-label="Open Oops">
+<button type="button" class="card rv1" data-i="2" data-group="Books &amp; Comics" aria-label="Open Oops">
 <img src="/img/dogpark-full.jpg" alt="Oops — yellow and white bird’s-eye illustration of a dog park surrounded by a café, flower shop and houses, full of dogs, cats and surprised neighbors" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Oops</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Short Comic</span>
 </span>
 </button>
-<button type="button" class="card" data-i="3" data-group="Illustration" aria-label="Open Life Clock">
+<button type="button" class="card rv1" data-i="3" data-group="Illustration" aria-label="Open Life Clock">
 <video src="/img/lifeclock.mp4" poster="/img/lifeclock.jpg" autoplay muted loop playsinline aria-label="Life Clock — a round clock face filled with glowing blue animal skeletons, its ornate hands turning" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED"></video>
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Life Clock</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration · Animation</span>
 </span>
 </button>
-<button type="button" class="card" data-i="4" data-group="Illustration" aria-label="Open 25 Kinds of Beetle">
+<button type="button" class="card rv1" data-i="4" data-group="Illustration" aria-label="Open 25 Kinds of Beetle">
 <img src="/img/beetles.jpg" alt="25 Kinds of Beetle — stippled pen drawings of twenty-five beetles on a blue background" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">25 Kinds of Beetle</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Pen Illustration</span>
 </span>
 </button>
-<button type="button" class="card" data-i="5" data-group="Illustration" aria-label="Open The Moment Before Falling">
+<button type="button" class="card rv1" data-i="5" data-group="Illustration" aria-label="Open The Moment Before Falling">
 <img src="/img/falling.jpg" alt="The Moment Before Falling — intricate pen drawing of a figure reaching upward through clouds and thorns" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Moment Before Falling</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
 </span>
 </button>
-<button type="button" class="card" data-i="6" data-group="Children’s" aria-label="Open Explorer">
+<button type="button" class="card rv1" data-i="6" data-group="Children’s" aria-label="Open Explorer">
 <img src="/img/explorer1.jpg" alt="Explorer — a girl with a map stands before a glowing waterfall full of butterflies" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Explorer</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Children’s Series</span>
 </span>
 </button>
-<button type="button" class="card" data-i="7" data-group="Books &amp; Comics" aria-label="Open Hushi">
+<button type="button" class="card rv1" data-i="7" data-group="Books &amp; Comics" aria-label="Open Hushi">
 <img src="/img/hushi-cover.jpg" alt="Hushi — green comic cover with hand-lettered title, centipede and beetle" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Hushi</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Wordless Comic</span>
 </span>
 </button>
-<button type="button" class="card" data-i="8" data-group="Illustration" aria-label="Open Where Bones Become Breath">
+<button type="button" class="card rv1" data-i="8" data-group="Illustration" aria-label="Open Where Bones Become Breath">
 <img src="/img/bones.jpg" alt="Where Bones Become Breath — a figure drifting among skeletal fish in deep blue water" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Where Bones Become Breath</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
 </span>
 </button>
-<button type="button" class="card" data-i="9" data-group="Illustration" aria-label="Open Where the Forest Breathes">
+<button type="button" class="card rv1" data-i="9" data-group="Illustration" aria-label="Open Where the Forest Breathes">
 <img src="/img/forest.jpg" alt="Where the Forest Breathes — a wide panoramic forest scene in soft greens and gold light" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Where the Forest Breathes</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
 </span>
 </button>
-<button type="button" class="card" data-i="10" data-group="Design &amp; Product" aria-label="Open Hymenocallis Seed Packet">
+<button type="button" class="card rv1" data-i="10" data-group="Design &amp; Product" aria-label="Open Hymenocallis Seed Packet">
 <img src="/img/seed.jpg" alt="Seed packet design with a fairy among white spider lilies on violet blue" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Hymenocallis Seed Packet</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Packaging</span>
 </span>
 </button>
-<button type="button" class="card" data-i="11" data-group="Books &amp; Comics" aria-label="Open The Moon and Sixpence">
+<button type="button" class="card rv1" data-i="11" data-group="Books &amp; Comics" aria-label="Open The Moon and Sixpence">
 <img src="/img/moon.jpg" alt="The Moon and Sixpence — black and white comic page with a lion and hand-lettered text" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Moon and Sixpence</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Comic</span>
 </span>
 </button>
-<button type="button" class="card" data-i="12" data-group="Illustration" aria-label="Open Ocean Creature">
+<button type="button" class="card rv1" data-i="12" data-group="Illustration" aria-label="Open Ocean Creature">
 <img src="/img/ocean.jpg" alt="Ocean Creature — a detailed sea slug drawn in green, gold and gray" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Ocean Creature</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Colored Pencil</span>
 </span>
 </button>
-<button type="button" class="card" data-i="13" data-group="Design &amp; Product" aria-label="Open 2025 Calendar">
+<button type="button" class="card rv1" data-i="13" data-group="Design &amp; Product" aria-label="Open 2025 Calendar">
 <img src="/img/calendar1.jpg" alt="2025 calendar cover with a white snake coiled in flowers on soft pink" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">2025 Calendar</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Product</span>
 </span>
 </button>
-<button type="button" class="card" data-i="14" data-group="Design &amp; Product" aria-label="Open Gazing">
+<button type="button" class="card rv1" data-i="14" data-group="Design &amp; Product" aria-label="Open Gazing">
 <img src="/img/sticker-gazing.jpg" alt="Gazing sticker sheet with a moth, papaya, heart and figures" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Gazing</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Sticker Sheet</span>
 </span>
 </button>
-<button type="button" class="card" data-i="15" data-group="Illustration" aria-label="Open Buddha Statue">
+<button type="button" class="card rv1" data-i="15" data-group="Illustration" aria-label="Open Buddha Statue">
 <img src="/img/buddha1.jpg" alt="Stippled study of a seated wooden statue in warm browns" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Buddha Statue</span>
 <span style="font-size: 13px; color: #4A6470; white-space: nowrap">Study</span>
 </span>
 </button>
-<button type="button" class="card" data-i="16" data-group="Design &amp; Product" aria-label="Open Others">
+<button type="button" class="card rv1" data-i="16" data-group="Design &amp; Product" aria-label="Open Others">
 <img src="/img/sticker-others.jpg" alt="Others sticker sheet with purple figures, flowers and Chinese lettering" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
 <span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
 <span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Others</span>
@@ -340,8 +343,10 @@ var f=b.textContent;document.querySelectorAll('.pill').forEach(function(p){p.set
 var n=0;cards.forEach(function(c){var show=f==='All'||c.dataset.group===f;c.hidden=!show;if(show)n++});
 document.getElementById('count').textContent=n;});});
 (function(){document.body.classList.add('rvon');
-var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('in', e.isIntersecting)})},{threshold:.2,rootMargin:'-6% 0px -12% 0px'});
-[].forEach.call(document.querySelectorAll('.rv'),function(e){io.observe(e)});})();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('in', e.isIntersecting)})},{threshold:.08,rootMargin:'-4% 0px -5% 0px'});
+[].forEach.call(document.querySelectorAll('.rv'),function(e){io.observe(e)});
+var io1=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io1.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+[].forEach.call(document.querySelectorAll('.rv1'),function(e){io1.observe(e)});})();
 (function(){var N=SLIDES.length,i=0,img=document.getElementById('stage-img');if(!img)return;
 var dots=[].slice.call(document.querySelectorAll('.hdot')),bg=document.getElementById('stage-bg');
 function show(n){i=(n+N)%N;var s=SLIDES[i];var c=img.cloneNode();c.src=s.img;c.alt=s.alt;img.replaceWith(c);img=c;bg.style.backgroundImage='url('+s.img+')';
