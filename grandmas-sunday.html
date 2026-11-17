@@ -23,6 +23,11 @@ a{color:#EAF2F5;text-decoration:none}a:hover{color:#9FD8C4}
 .tapui:active{scale:.94;box-shadow:0 1px 3px rgba(15,30,111,.10);transition:scale .1s cubic-bezier(.4,0,1,1),box-shadow .1s ease}
 @media (prefers-reduced-motion:reduce){.tapui,.tapui:hover,.tapui:active{scale:1;transition:none}}
 @media (hover:none){.tapui:hover{scale:1;box-shadow:none}}
+:root{--spr:linear(0 0%, 0.0459 2.94%, 0.1665 5.88%, 0.3354 8.82%, 0.5276 11.76%, 0.7212 14.71%, 0.8989 17.65%, 1.0482 20.59%, 1.162 23.53%, 1.2376 26.47%, 1.2764 29.41%, 1.2826 32.35%, 1.2626 35.29%, 1.2235 38.24%, 1.1729 41.18%, 1.1177 44.12%, 1.0636 47.06%, 1.0153 50%, 0.9757 52.94%, 0.9466 55.88%, 0.9283 58.82%, 0.9201 61.76%, 0.9208 64.71%, 0.9283 67.65%, 0.9405 70.59%, 0.9555 73.53%, 0.9712 76.47%, 0.9862 79.41%, 0.9993 82.35%, 1.0097 85.29%, 1.017 88.24%, 1.0213 91.18%, 1.0228 94.12%, 1.022 97.06%, 1 100%)}
+.pnav a,.phead a{display:inline-block;scale:1;transition:scale .667s var(--spr),color .2s ease}
+.pnav a:hover,.phead a:hover{scale:1.09}
+.pnav a:active,.phead a:active{scale:.94;transition:scale .1s cubic-bezier(.4,0,1,1)}
+@media (hover:none){.pnav a:hover,.phead a:hover{scale:1}}
 </style>
 
 </head>
@@ -47,7 +52,11 @@ a{color:#EAF2F5;text-decoration:none}a:hover{color:#9FD8C4}
 <h1 style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(41px, 4.7vw, 69px); line-height: .95; letter-spacing: 0">Grandma’s Sunday</h1>
 </div>
 </section>
-<section class="pad" style="max-width: 1360px; margin: 0 auto; padding: 0 40px">
+<div class="vstack" aria-label="Grandma’s Sunday cover">
+<img src="/img/grandmas.jpg" alt="Grandma’s Sunday cover — an open suitcase holding a framed photo of a grandmother and child, surrounded by packed clothes and keepsakes">
+</div>
+
+<section class="pad" style="max-width: 1360px; margin: 0 auto; padding: 56px 40px 0">
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 46vh; border: 1px dashed rgba(185,199,232,.55); border-radius: 6px; text-align: center; padding: 48px 24px">
 <p style="margin: 0; font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 31px; line-height: 1.1">Coming Soon</p>
 <p style="margin: 0; max-width: 440px; font-size: 16px; line-height: 1.6; color: #D5DFF2">This project is still in the works. Concept art and design notes will be posted here.</p>
