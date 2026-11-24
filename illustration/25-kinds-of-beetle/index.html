@@ -128,6 +128,50 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 .card[hidden],.lb[hidden],.lb-media[hidden]{display:none}
 .cmedia{position:relative;display:block}.cplay{position:absolute;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:7px;padding:6px 11px 6px 10px;border-radius:999px;background:rgba(15,30,111,.72);color:#FFFFFF;font:500 12px Inter,sans-serif;letter-spacing:.02em;line-height:1}.cbadge{display:flex;align-items:center;gap:6px;padding-top:8px;font-size:12.5px;font-weight:500;color:#1D6B8A;line-height:1.3}.lb-award{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:0;padding:7px 14px;border:1px solid #9FD8C4;border-radius:999px;background:rgba(159,216,196,.18);font-size:13.5px;font-weight:500;color:#0F1E6F;line-height:1.3}.lb-award[hidden]{display:none}
 .lb-track{width:100%;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;-webkit-overflow-scrolling:touch}.lb-track::-webkit-scrollbar{display:none}.lb-track.drag{cursor:grabbing;scroll-snap-type:none}.lb-track[hidden],.lb-pg[hidden],.lb-count[hidden]{display:none}.lb-slide{flex:0 0 100%;min-width:0;box-sizing:border-box;padding:0 72px;display:flex;align-items:center;justify-content:center;scroll-snap-align:center;scroll-snap-stop:always}.lb-slide img{display:block;max-width:100%;max-height:calc(100vh - 170px);object-fit:contain;user-select:none;-webkit-user-drag:none}.lb-pg{position:absolute;top:50%;z-index:2;width:52px;height:52px;margin-top:-46px;padding:0;border:0;border-radius:50%;background:rgba(244,247,248,.82);color:#0F1E6F;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(15,30,111,.12);transition:opacity .2s,scale .2s}.lb-pg:hover{scale:1.1}.lb-pg:active{scale:.94}.lb-pg:disabled{opacity:0;pointer-events:none}.lb-pgprev{left:40px}.lb-pgnext{right:40px}.lb-count{font-size:13px;color:#4A6470;letter-spacing:.04em}@media (max-width:900px){.lb-track{align-items:flex-start;transition:height .25s ease}.lb-slide{padding:0}.lb-slide img{max-height:72vh;width:auto;height:auto}.lb-pg{display:none!important}.lb-count{display:block;margin-top:10px}}@media (hover:none){.lb-pg:hover{scale:1}}
+/* ---- illustration shelf ---- */
+.masonry{display:none}
+.shWrap{position:relative;height:clamp(500px,70vh,780px);margin:4px 0 0;overflow:hidden}
+.shShelf{position:absolute;left:0;right:0;z-index:2;perspective:1500px;perspective-origin:50% 50%;touch-action:pan-y;cursor:grab}
+.shShelf.dg{cursor:grabbing}
+.shStage{position:absolute;left:50%;top:0;width:0;height:0;transform-style:preserve-3d}
+.shTape{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.shPl{position:absolute;display:block;overflow:hidden;border-radius:2px;text-decoration:none;backface-visibility:hidden;will-change:clip-path}
+.shPl img{display:block;width:100%;height:100%;border-radius:2px;background:#E3EAED}
+.shPl::after{content:"";position:absolute;inset:0;background:#07142E;opacity:var(--sh,0);border-radius:2px;pointer-events:none}
+.shPlay{position:absolute;left:10px;bottom:10px;display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(15,30,111,.82);color:#fff;font-size:11px;font-weight:600;letter-spacing:.04em;pointer-events:none}
+.shPlay svg{display:block}
+.shPl:focus-visible{outline:2px solid #1D6B8A;outline-offset:3px}
+.shFloor{position:absolute;left:50%;z-index:1;pointer-events:none;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 42%,rgba(28,40,70,.22),rgba(28,40,70,.07) 55%,transparent 72%)}
+.shCap{position:absolute;left:0;right:0;z-index:4;text-align:center;pointer-events:none}
+.shMask{position:relative;overflow:hidden;margin:0 auto;max-width:min(84vw,680px)}
+.shMask>span{display:block}
+.shCap .t{font-family:'Bodoni Moda',serif;font-weight:600;font-size:clamp(23px,2.7vw,38px);line-height:1.18;letter-spacing:0;color:#0F1E6F}
+.shCap .t .shMask{height:1.18em}
+.shCap .c{margin-top:10px}
+.shCap .c .shMask{height:1.3em}
+.shCap .c span{font-size:10.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#4A6470}
+.shRule{width:18px;height:1px;background:#0F1E6F;opacity:.5;margin:15px auto 0}
+.shArw{position:absolute;z-index:5;width:46px;height:46px;display:grid;place-items:center;background:none;border:0;padding:0;color:#0F1E6F;cursor:pointer;scale:1;opacity:.75;transition:scale .5s cubic-bezier(.2,.8,.2,1),opacity .3s ease}
+.shArw:hover{scale:1.14;opacity:1}
+.shArw:active{scale:.9;transition:scale .09s cubic-bezier(.4,0,1,1)}
+.shArw svg{width:26px;height:13px;display:block}
+.shRail{position:absolute;left:0;right:0;bottom:4px;z-index:5;padding:0 32px;display:flex;align-items:center;gap:18px;justify-content:center}
+.shTicks{position:relative;height:26px;flex:0 1 min(560px,62vw);cursor:pointer}
+.shTicks .ln{position:absolute;left:0;right:0;top:13px;height:1px;background:linear-gradient(90deg,transparent,rgba(15,30,111,.17) 8%,rgba(15,30,111,.17) 92%,transparent)}
+.shMet{position:absolute;top:13px;left:0;width:0;height:0;pointer-events:none}
+.shMet .st{position:absolute;right:0;top:-1.9px;height:3.8px;width:0;transform-origin:100% 50%;clip-path:polygon(100% 0,100% 100%,0 50%);background:linear-gradient(270deg,#F0A312,rgba(250,186,60,.55) 40%,rgba(255,210,110,0));will-change:width}
+.shMet .hd{position:absolute;left:0;top:0;width:0;height:0;will-change:transform}
+.shMet .ha{position:absolute;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:radial-gradient(circle,rgba(255,186,48,.42) 0%,rgba(255,180,40,.16) 38%,rgba(255,176,36,0) 70%);animation:shHalo 2.6s ease-in-out infinite}
+.shMet .sx{position:absolute;left:0;top:0;width:19px;height:19px;margin:-9.5px 0 0 -9.5px;background:radial-gradient(circle at 50% 44%,#FFF0A8 0%,#FFC93C 34%,#EF9208 100%);filter:drop-shadow(0 1px 1.6px rgba(170,100,0,.45));clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);animation:shTw 2.6s ease-in-out infinite}
+@keyframes shTw{0%,100%{transform:scale(.8) rotate(0deg)}50%{transform:scale(1.14) rotate(16deg)}}
+@keyframes shHalo{0%,100%{opacity:.48;transform:scale(.88)}50%{opacity:1;transform:scale(1.14)}}
+.shNum{font-size:10.5px;font-weight:600;letter-spacing:.14em;color:#0F1E6F;opacity:.7;font-variant-numeric:tabular-nums;white-space:nowrap}
+.shHint{position:absolute;z-index:6;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.9);transition:opacity .25s ease,transform .35s cubic-bezier(.2,.8,.2,1)}
+.shHint.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.shHint span{display:inline-flex;align-items:center;gap:7px;background:#0F1E6F;color:#EAF2F5;padding:9px 14px;border-radius:999px;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;box-shadow:0 8px 20px -8px rgba(10,20,70,.5)}
+.shWrap[hidden]{display:none}
+@media (prefers-reduced-motion:reduce){.shMet .sx,.shMet .ha{animation:none}.shArw{transition:none}}
+@media (max-width:760px){.shWrap{height:clamp(420px,66vh,620px)}.shRail{padding:0 14px;gap:12px}.shHint{display:none}.shArw{width:40px;height:40px}}
 </style>
 
 </head>
@@ -207,141 +251,39 @@ a{color:#0F1E6F;text-decoration:none}a:hover{color:#1D6B8A}
 <button type="button" class="pill" aria-pressed="true">All</button><button type="button" class="pill" aria-pressed="false">Illustration</button><button type="button" class="pill" aria-pressed="false">Animation</button><button type="button" class="pill" aria-pressed="false">Books &amp; Comics</button><button type="button" class="pill" aria-pressed="false">Children’s</button><button type="button" class="pill" aria-pressed="false">Design &amp; Product</button>
 </div>
 </div>
+<div class="shWrap rv1" id="shWrap">
+<div class="shFloor" id="shFloor"></div>
+<div class="shShelf" id="shShelf"><div class="shStage" id="shStage"></div></div>
+<div class="shHint" id="shHint"><span>Open <svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 9L9 3M9 3H4.2M9 3v4.8"/></svg></span></div>
+<div class="shCap" id="shCap">
+<div class="t"><div class="shMask" id="shCapT"><span></span></div></div>
+<div class="c"><div class="shMask" id="shCapC"><span></span></div></div>
+<div class="shRule"></div>
+</div>
+<button type="button" class="shArw" id="shPrev" aria-label="Previous work"><svg viewBox="0 0 26 13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M6.5 1L1 6.5l5.5 5.5M1 6.5h24"/></svg></button>
+<button type="button" class="shArw" id="shNext" aria-label="Next work"><svg viewBox="0 0 26 13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" aria-hidden="true"><path d="M19.5 1L25 6.5l-5.5 5.5M25 6.5H1"/></svg></button>
+<div class="shRail"><div class="shTicks" id="shTicks"><div class="ln"></div><div class="shMet" id="shMet"></div></div><div class="shNum" id="shNum"></div></div>
+</div>
 <div class="masonry">
-<button type="button" class="card rv1" data-i="0" data-group="Animation" aria-label="Play The Midnight Glow">
-<span class="cmedia"><img src="/img/the-midnight-glow.jpg" alt="The Midnight Glow — a small white cat sits before a great glowing tree in a green forest at night" loading="lazy" width="1920" height="1080" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED"><span class="cplay" aria-hidden="true"><svg aria-hidden="true" width="11" height="12" viewBox="0 0 11 12"><path d="M1 1 L10 6 L1 11 Z" fill="#FFFFFF"/></svg>1:04</span></span>
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Midnight Glow</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Animated Short</span>
-</span>
-<span class="cbadge"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" style="flex:none"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" fill="currentColor"/></svg>Official Selection · Baltimore Film Festival 2026</span>
-</button>
-<button type="button" class="card rv1" data-i="1" data-group="Animation" aria-label="Play Freedom">
-<span class="cmedia"><img src="/img/freedom.jpg" alt="Freedom — a glowing white-haired figure stands on a rooftop above a blue city at night" loading="lazy" width="1920" height="1080" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED"><span class="cplay" aria-hidden="true"><svg aria-hidden="true" width="11" height="12" viewBox="0 0 11 12"><path d="M1 1 L10 6 L1 11 Z" fill="#FFFFFF"/></svg>0:19</span></span>
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Freedom</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Animated Short</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="2" data-group="Books &amp; Comics" aria-label="Open The Last Angel">
-<img src="/img/angel1.jpg" alt="The Last Angel — grayscale book spread of a fallen angel by a reflective, iridescent river" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Last Angel</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Book Illustration</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="3" data-group="Books &amp; Comics" aria-label="Open Shadow Shop">
-<img src="/img/shadowshop.jpg" alt="Shadow Shop book cover — a figure steps toward a glowing shop door as stars burst out, framed in gold baroque ornament" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Shadow Shop</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Book Cover</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="4" data-group="Books &amp; Comics" aria-label="Open Oops">
-<img src="/img/dogpark-full.jpg" alt="Oops — yellow and white bird’s-eye illustration of a dog park surrounded by a café, flower shop and houses, full of dogs, cats and surprised neighbors" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Oops</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Short Comic</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="5" data-group="Illustration|Animation" aria-label="Open Life Clock">
-<video src="/img/lifeclock.mp4" poster="/img/lifeclock.jpg" autoplay muted loop playsinline aria-label="Life Clock — a round clock face filled with glowing blue animal skeletons, its ornate hands turning" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED"></video>
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Life Clock</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration · Animation</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="6" data-group="Illustration" aria-label="Open 25 Kinds of Beetle">
-<img src="/img/beetles.jpg" alt="25 Kinds of Beetle — stippled pen drawings of twenty-five beetles on a blue background" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">25 Kinds of Beetle</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Pen Illustration</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="7" data-group="Illustration" aria-label="Open The Moment Before Falling">
-<img src="/img/falling.jpg" alt="The Moment Before Falling — intricate pen drawing of a figure reaching upward through clouds and thorns" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Moment Before Falling</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="8" data-group="Children’s" aria-label="Open Explorer">
-<img src="/img/explorer1.jpg" alt="Explorer — a girl with a map stands before a glowing waterfall full of butterflies" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Explorer</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Children’s Series</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="9" data-group="Books &amp; Comics" aria-label="Open Hushi">
-<img src="/img/hushi-cover.jpg" alt="Hushi — green comic cover with hand-lettered title, centipede and beetle" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Hushi</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Wordless Comic</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="10" data-group="Illustration" aria-label="Open Where Bones Become Breath">
-<img src="/img/bones.jpg" alt="Where Bones Become Breath — a figure drifting among skeletal fish in deep blue water" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Where Bones Become Breath</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="11" data-group="Illustration" aria-label="Open Where the Forest Breathes">
-<img src="/img/forest.jpg" alt="Where the Forest Breathes — a wide panoramic forest scene in soft greens and gold light" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Where the Forest Breathes</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Illustration</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="12" data-group="Design &amp; Product" aria-label="Open Hymenocallis Seed Packet">
-<img src="/img/seed.jpg" alt="Seed packet design with a fairy among white spider lilies on violet blue" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Hymenocallis Seed Packet</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Packaging</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="13" data-group="Books &amp; Comics" aria-label="Open The Moon and Sixpence">
-<img src="/img/moon.jpg" alt="The Moon and Sixpence — black and white comic page with a lion and hand-lettered text" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">The Moon and Sixpence</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Comic</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="14" data-group="Illustration" aria-label="Open Ocean Creature">
-<img src="/img/ocean.jpg" alt="Ocean Creature — a detailed sea slug drawn in green, gold and gray" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Ocean Creature</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Colored Pencil</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="15" data-group="Design &amp; Product" aria-label="Open 2025 Calendar">
-<img src="/img/calendar1.jpg" alt="2025 calendar cover with a white snake coiled in flowers on soft pink" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">2025 Calendar</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Product</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="16" data-group="Design &amp; Product" aria-label="Open Gazing">
-<img src="/img/sticker-gazing.jpg" alt="Gazing sticker sheet with a moth, papaya, heart and figures" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Gazing</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Sticker Sheet</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="17" data-group="Illustration" aria-label="Open Buddha Statue">
-<img src="/img/buddha1.jpg" alt="Stippled study of a seated wooden statue in warm browns" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Buddha Statue</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Study</span>
-</span>
-</button>
-<button type="button" class="card rv1" data-i="18" data-group="Design &amp; Product" aria-label="Open Others">
-<img src="/img/sticker-others.jpg" alt="Others sticker sheet with purple figures, flowers and Chinese lettering" loading="lazy" style="display: block; width: 100%; height: auto; border-radius: 6px; background: #E3EAED">
-<span style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 12px">
-<span style="font-family: 'Bodoni Moda', serif; font-size: 17px; font-weight: 600; letter-spacing: 0; line-height: 1.15">Others</span>
-<span style="font-size: 13px; color: #4A6470; white-space: nowrap">Sticker Sheet</span>
-</span>
-</button>
+<button type="button" class="card" data-i="0" data-group="Animation" data-ratio="1.7778" data-img="/img/sh-the-midnight-glow.jpg" data-title="The Midnight Glow" data-cat="Animated Short" data-alt="The Midnight Glow — a small white cat sits before a great glowing tree in a green forest at night" data-url="/illustration/the-midnight-glow" data-play="1:04" aria-label="Open The Midnight Glow">The Midnight Glow</button>
+<button type="button" class="card" data-i="1" data-group="Animation" data-ratio="1.7778" data-img="/img/sh-freedom.jpg" data-title="Freedom" data-cat="Animated Short" data-alt="Freedom — a glowing white-haired figure stands on a rooftop above a blue city at night" data-url="/illustration/freedom" data-play="0:19" aria-label="Open Freedom">Freedom</button>
+<button type="button" class="card" data-i="2" data-group="Books &amp; Comics" data-ratio="1.7595" data-img="/img/sh-angel1.jpg" data-title="The Last Angel" data-cat="Book Illustration" data-alt="The Last Angel — grayscale book spread of a fallen angel by a reflective, iridescent river" data-url="/illustration/the-last-angel" data-play="" aria-label="Open The Last Angel">The Last Angel</button>
+<button type="button" class="card" data-i="3" data-group="Books &amp; Comics" data-ratio="0.6667" data-img="/img/sh-shadowshop.jpg" data-title="Shadow Shop" data-cat="Book Cover" data-alt="Shadow Shop book cover — a figure steps toward a glowing shop door as stars burst out, framed in gold baroque ornament" data-url="/illustration/shadow-shop" data-play="" aria-label="Open Shadow Shop">Shadow Shop</button>
+<button type="button" class="card" data-i="4" data-group="Books &amp; Comics" data-ratio="0.6471" data-img="/img/sh-dogpark-full.jpg" data-title="Oops" data-cat="Short Comic" data-alt="Oops — yellow and white bird’s-eye illustration of a dog park surrounded by a café, flower shop and houses, full of dogs, cats and surprised neighbors" data-url="/illustration/oops" data-play="" aria-label="Open Oops">Oops</button>
+<button type="button" class="card" data-i="5" data-group="Illustration|Animation" data-ratio="1.0" data-img="/img/sh-lifeclock.jpg" data-title="Life Clock" data-cat="Illustration · Animation" data-alt="Life Clock — a round clock face filled with glowing blue animal skeletons, its ornate hands turning" data-url="/illustration/life-clock" data-play="Play" aria-label="Open Life Clock">Life Clock</button>
+<button type="button" class="card" data-i="6" data-group="Illustration" data-ratio="0.4184" data-img="/img/sh-beetles.jpg" data-title="25 Kinds of Beetle" data-cat="Pen Illustration" data-alt="25 Kinds of Beetle — stippled pen drawings of twenty-five beetles on a blue background" data-url="/illustration/25-kinds-of-beetle" data-play="" aria-label="Open 25 Kinds of Beetle">25 Kinds of Beetle</button>
+<button type="button" class="card" data-i="7" data-group="Illustration" data-ratio="1.3857" data-img="/img/sh-falling.jpg" data-title="The Moment Before Falling" data-cat="Illustration" data-alt="The Moment Before Falling — intricate pen drawing of a figure reaching upward through clouds and thorns" data-url="/illustration/the-moment-before-falling" data-play="" aria-label="Open The Moment Before Falling">The Moment Before Falling</button>
+<button type="button" class="card" data-i="8" data-group="Children’s" data-ratio="0.7143" data-img="/img/sh-explorer1.jpg" data-title="Explorer" data-cat="Children’s Series" data-alt="Explorer — a girl with a map stands before a glowing waterfall full of butterflies" data-url="/illustration/explorer" data-play="" aria-label="Open Explorer">Explorer</button>
+<button type="button" class="card" data-i="9" data-group="Books &amp; Comics" data-ratio="0.7143" data-img="/img/sh-hushi-cover.jpg" data-title="Hushi" data-cat="Wordless Comic" data-alt="Hushi — green comic cover with hand-lettered title, centipede and beetle" data-url="/illustration/hushi" data-play="" aria-label="Open Hushi">Hushi</button>
+<button type="button" class="card" data-i="10" data-group="Illustration" data-ratio="2.2688" data-img="/img/sh-bones.jpg" data-title="Where Bones Become Breath" data-cat="Illustration" data-alt="Where Bones Become Breath — a figure drifting among skeletal fish in deep blue water" data-url="/illustration/where-bones-become-breath" data-play="" aria-label="Open Where Bones Become Breath">Where Bones Become Breath</button>
+<button type="button" class="card" data-i="11" data-group="Illustration" data-ratio="4.3732" data-img="/img/sh-forest.jpg" data-title="Where the Forest Breathes" data-cat="Illustration" data-alt="Where the Forest Breathes — a wide panoramic forest scene in soft greens and gold light" data-url="/illustration/where-the-forest-breathes" data-play="" aria-label="Open Where the Forest Breathes">Where the Forest Breathes</button>
+<button type="button" class="card" data-i="12" data-group="Design &amp; Product" data-ratio="1.0" data-img="/img/sh-seed.jpg" data-title="Hymenocallis Seed Packet" data-cat="Packaging" data-alt="Seed packet design with a fairy among white spider lilies on violet blue" data-url="/illustration/hymenocallis-seed-packet" data-play="" aria-label="Open Hymenocallis Seed Packet">Hymenocallis Seed Packet</button>
+<button type="button" class="card" data-i="13" data-group="Books &amp; Comics" data-ratio="0.7072" data-img="/img/sh-moon.jpg" data-title="The Moon and Sixpence" data-cat="Comic" data-alt="The Moon and Sixpence — black and white comic page with a lion and hand-lettered text" data-url="/illustration/the-moon-and-sixpence" data-play="" aria-label="Open The Moon and Sixpence">The Moon and Sixpence</button>
+<button type="button" class="card" data-i="14" data-group="Illustration" data-ratio="0.7491" data-img="/img/sh-ocean.jpg" data-title="Ocean Creature" data-cat="Colored Pencil" data-alt="Ocean Creature — a detailed sea slug drawn in green, gold and gray" data-url="/illustration/ocean-creature" data-play="" aria-label="Open Ocean Creature">Ocean Creature</button>
+<button type="button" class="card" data-i="15" data-group="Design &amp; Product" data-ratio="0.8889" data-img="/img/sh-calendar1.jpg" data-title="2025 Calendar" data-cat="Product" data-alt="2025 calendar cover with a white snake coiled in flowers on soft pink" data-url="/illustration/2025-calendar" data-play="" aria-label="Open 2025 Calendar">2025 Calendar</button>
+<button type="button" class="card" data-i="16" data-group="Design &amp; Product" data-ratio="0.7072" data-img="/img/sh-sticker-gazing.jpg" data-title="Gazing" data-cat="Sticker Sheet" data-alt="Gazing sticker sheet with a moth, papaya, heart and figures" data-url="/illustration/gazing" data-play="" aria-label="Open Gazing">Gazing</button>
+<button type="button" class="card" data-i="17" data-group="Illustration" data-ratio="0.7494" data-img="/img/sh-buddha1.jpg" data-title="Buddha Statue" data-cat="Study" data-alt="Stippled study of a seated wooden statue in warm browns" data-url="/illustration/buddha-statue" data-play="" aria-label="Open Buddha Statue">Buddha Statue</button>
+<button type="button" class="card" data-i="18" data-group="Design &amp; Product" data-ratio="0.7072" data-img="/img/sh-sticker-others.jpg" data-title="Others" data-cat="Sticker Sheet" data-alt="Others sticker sheet with purple figures, flowers and Chinese lettering" data-url="/illustration/others" data-play="" aria-label="Open Others">Others</button>
 
 </div>
 </main>
@@ -382,7 +324,7 @@ var cards=[].slice.call(document.querySelectorAll('.card'));
 document.querySelectorAll('.pill').forEach(function(b){b.addEventListener('click',function(){
 var f=b.textContent;document.querySelectorAll('.pill').forEach(function(p){p.setAttribute('aria-pressed',p===b?'true':'false')});
 var n=0;cards.forEach(function(c){var show=f==='All'||c.dataset.group.split('|').indexOf(f)>=0;c.hidden=!show;if(show)n++});
-document.getElementById('count').textContent=n;});});
+document.getElementById('count').textContent=n;if(window.__shSync)window.__shSync();});});
 (function(){document.body.classList.add('rvon');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('in', e.isIntersecting)})},{threshold:.08,rootMargin:'-4% 0px -5% 0px'});
 [].forEach.call(document.querySelectorAll('.rv'),function(e){io.observe(e)});
@@ -459,6 +401,242 @@ window.addEventListener('mouseup',function(){if(down){down=false;st.style.scroll
 st.addEventListener('mousemove',function(e){if(!down)return;var dx=e.pageX-sx;if(Math.abs(dx)>5)moved=true;st.scrollLeft=sl-dx;});
 st.addEventListener('click',function(e){if(moved){e.stopPropagation();e.preventDefault();moved=false;}},true);
 st.addEventListener('dragstart',function(e){e.preventDefault()});
+})();
+(function(){
+var wrap=document.getElementById('shWrap');
+if(!wrap||typeof cards==='undefined')return;
+var stage=document.getElementById('shStage'),shelf=document.getElementById('shShelf'),
+    floor=document.getElementById('shFloor'),hint=document.getElementById('shHint'),
+    capEl=document.getElementById('shCap'),capT=document.getElementById('shCapT'),capC=document.getElementById('shCapC'),
+    ticks=document.getElementById('shTicks'),met=document.getElementById('shMet'),num=document.getElementById('shNum'),
+    bPrev=document.getElementById('shPrev'),bNext=document.getElementById('shNext');
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var LEAN=26,BOWL=0.225,POP=0.06,KSP=5.2;
+
+function scl(n){return 1/(1+Math.pow(Math.abs(n),1.6));}
+var DN=0.004,NMAX=3.6,XN=[];
+(function(){var a=0;for(var n=0;n<=NMAX;n+=DN){XN.push(a);a+=DN*scl(n);}})();
+function xn(n){var a=Math.abs(n)/DN,i=Math.floor(a),v;
+ if(i>=XN.length-1)v=XN[XN.length-1];else v=XN[i]+(XN[i+1]-XN[i])*(a-i);
+ return n<0?-v:v;}
+function ss(t){return t*t*(3-2*t);}
+
+var mStreak=document.createElement('div');mStreak.className='st';met.appendChild(mStreak);
+var mHead=document.createElement('div');mHead.className='hd';
+mHead.innerHTML='<i class="ha"></i><i class="sx"></i>';met.appendChild(mHead);
+
+var tSpan=capT.firstElementChild,cSpan=capC.firstElementChild;
+var LIST=[],tapes=[],N=0,M=0,SPAN=8,s=0,T=0,capIdx=-1,lastT=0,dragging=false,moved=0,
+    mx=-1,my=-1,cw=0,chh=0,capY=0,slen=0,lastPos=0,warm=false,railW=1,running=false;
+var H,SLOT,GAP,P,FH,FW,cy,band,capFix,ah,BW,BH,mob;
+
+function build(){
+  var cs=cards.filter(function(c){return !c.hidden;});
+  LIST=cs.map(function(c){return {i:+c.dataset.i,r:parseFloat(c.dataset.ratio)||1,
+    img:c.dataset.img,t:c.dataset.title||'',ct:c.dataset.cat||'',u:c.dataset.url||'#',alt:c.dataset.alt||'',pl:c.dataset.play||''};});
+  N=LIST.length;
+  if(!N){wrap.hidden=true;return;}
+  wrap.hidden=false;
+  SPAN=Math.max(0,Math.min(8,Math.floor((N-1)/2)));
+  M=N>1?N*3:1;
+  stage.innerHTML='';tapes=[];
+  for(var j=0;j<M;j++){
+    var d=LIST[j%N];
+    var tp=document.createElement('div');tp.className='shTape';
+    var a=document.createElement('a');a.className='shPl';a.href=d.u;a.setAttribute('aria-label','Open '+d.t);
+    var im=document.createElement('img');im.src=d.img;im.alt=d.alt;im.draggable=false;
+    im.decoding='async';im.loading=j<N?'lazy':'lazy';
+    a.appendChild(im);
+    if(d.pl){var pb=document.createElement('span');pb.className='shPlay';
+      pb.innerHTML='<svg viewBox="0 0 11 12" width="11" height="12" aria-hidden="true"><path d="M1 1 L10 6 L1 11 Z" fill="#fff"/></svg>'+d.pl;
+      a.appendChild(pb);}
+    tp.appendChild(a);stage.appendChild(tp);
+    bind(a,j);
+    tapes.push({el:tp,pl:a,li:j%N,vis:-1});
+  }
+  bPrev.hidden=bNext.hidden=(N<2);
+  ticks.style.visibility=N<2?'hidden':'';
+  s=T=lastPos=(N>1?N:0);warm=false;capIdx=-1;capY=0;slen=0;
+  metrics();setCap(0);
+  if(!running){running=true;lastT=performance.now();requestAnimationFrame(frame);}
+}
+function bind(a,j){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    if(moved)return;
+    if(N>1&&Math.abs(j-s)>0.5){T=Math.round(s)+Math.round(j-s);return;}
+    var c=cards[LIST[j%N].i];if(c)c.click();
+  });
+  a.addEventListener('dragstart',function(e){e.preventDefault();});
+}
+
+function metrics(){
+  BW=wrap.clientWidth||1;BH=wrap.clientHeight||1;mob=innerWidth<760;
+  H=mob?Math.min(BH*0.34,BW*0.62):Math.min(BH*0.40,BW*0.215);
+  SLOT=H*(mob?0.19:0.165);GAP=H*0.035;P=SLOT+GAP;
+  FW=mob?BW*0.72:Math.min(BW*0.44,H*3.0);
+  capFix=BH-(mob?126:150);
+  var top=6,bot=capFix-(mob?14:20);
+  band=Math.max(H*1.05,bot-top);cy=(top+bot)/2;
+  FH=Math.min(band,H*(mob?1.45:1.72));
+  var sTop=Math.max(0,cy-band/2-30);
+  shelf.style.top=sTop+'px';shelf.style.height=(band+60)+'px';
+  stage.style.top=(cy-sTop)+'px';
+  ah=mob?40:46;if(!capY)capY=capFix;
+  bPrev.style.left=mob?'4px':'max(14px, calc(50% - min(23vw, 300px)))';
+  bNext.style.right=mob?'4px':'max(14px, calc(50% - min(23vw, 300px)))';
+  railW=ticks.getBoundingClientRect().width||1;
+  for(var j=0;j<M;j++){
+    var t=tapes[j],w=H*LIST[t.li].r;
+    t.w=w;t.cs=Math.min(FH/H,FW/w);t.open=w*t.cs;
+    t.pl.style.width=w+'px';t.pl.style.height=H+'px';
+    t.pl.style.left=(-w/2)+'px';t.pl.style.top=(-H/2)+'px';
+  }
+}
+
+function frame(now){
+  var dt=Math.min(0.05,(now-lastT)/1000||0.016);lastT=now;
+  if(reduce)s=T;else{
+    var kk=dragging?18:KSP;
+    s+=(T-s)*(1-Math.exp(-kk*dt));
+    if(Math.abs(T-s)<0.0004)s=T;
+  }
+  if(N>1){if(s>N*2){s-=N;T-=N;}if(s<N){s+=N;T+=N;}}
+  draw(1-Math.exp(-7*dt),Math.max(0.008,dt));
+  requestAnimationFrame(frame);
+}
+
+function draw(capE,dtg){
+  var kf=Math.floor(s),tf=s-kf;
+  var oA=tapes[((kf%M)+M)%M].open,oB=tapes[(((kf+1)%M)+M)%M].open;
+  var Wc=oA+(oB-oA)*tf;
+  var U=Wc*0.52+H*1.25;
+  var E=Wc-SLOT+1.4*GAP;
+
+  cw=0;chh=H;
+  for(var i=0;i<M;i++){
+    var tp=tapes[i],r=i-s,ar=Math.abs(r);
+    if(ar>SPAN+0.001&&N>1){if(tp.vis!==0){tp.el.style.display='none';tp.vis=0;}continue;}
+    var B=ar<1?(r+Math.sin(Math.PI*r)/Math.PI)/2:(r>0?0.5:-0.5);
+    var u=r*P+E*B,n=u/U;
+    if(Math.abs(n)>2.25){if(tp.vis!==0){tp.el.style.display='none';tp.vis=0;}continue;}
+    if(tp.vis!==1){tp.el.style.display='';tp.vis=1;}
+    var o=ar<1?ss(1-ar):0,
+        sc=scl(n),
+        S=sc*(1+(tp.cs-1)*o),
+        x=U*xn(n),
+        y=BOWL*H*(1-sc),
+        th=(u<0?-1:1)*Math.min(1,Math.abs(n))*LEAN*(1-o),
+        z=o*H*POP,
+        wv=SLOT*sc+(tp.open-SLOT*sc)*o,
+        c=Math.max(0,(1-wv/(tp.w*S))/2*100);
+    tp.el.style.transform='translate3d('+x.toFixed(2)+'px,'+y.toFixed(2)+'px,'+z.toFixed(1)+
+      'px) rotateY('+th.toFixed(2)+'deg) scale('+S.toFixed(4)+')';
+    tp.el.style.zIndex=Math.round(2000-Math.abs(u));
+    tp.pl.style.clipPath='inset(0 '+c.toFixed(2)+'% 0 '+c.toFixed(2)+'% round 2px)';
+    tp.pl.style.setProperty('--sh',Math.min(0.5,(1-sc)*0.45+(1-o)*0.08).toFixed(3));
+    if(o>0.5){cw=wv;chh=H*S;}
+  }
+
+  var near=Math.round(s),dd=s-near;
+  setCap(((near%N)+N)%N);
+  var fade=ss(Math.max(0,1-Math.abs(dd)*2));
+  tSpan.style.opacity=fade.toFixed(3);
+  tSpan.style.transform='translateY('+(-dd*26).toFixed(1)+'px)';
+  cSpan.style.opacity=fade.toFixed(3);
+  cSpan.style.transform='translateY('+(-dd*15).toFixed(1)+'px)';
+
+  var pos=N>1?((s-N)%N+N)%N:0,jump=Math.abs(pos-lastPos)>N/2;
+  var v=jump?0:pos-lastPos;lastPos=pos;
+  var hx=(pos+0.5)/N*railW;
+  if(!warm||jump){warm=true;}
+  var sp=Math.min(1,Math.abs(v)/dtg/6.5),dir=v<0?-1:1;
+  mHead.style.transform='translate3d('+hx.toFixed(2)+'px,0,0) scale('+(1+sp*0.26).toFixed(3)+')';
+  var tgt=sp*86;
+  slen+=(tgt-slen)*(tgt>slen?0.45:1-Math.exp(-5.5*dtg));
+  mStreak.style.width=slen.toFixed(1)+'px';
+  mStreak.style.transform='translate3d('+hx.toFixed(2)+'px,0,0)'+(dir<0?' scaleX(-1)':'');
+  mStreak.style.opacity=Math.min(1,slen/16).toFixed(2);
+
+  var strips=cy+H*0.5+BOWL*H*0.5+(mob?18:24);
+  var want=Math.min(capFix,Math.max(cy+chh/2+(mob?26:38),strips));
+  capY+=(want-capY)*capE;
+  capEl.style.top=capY.toFixed(1)+'px';
+  bPrev.style.top=bNext.style.top=(capY+(mob?16:24)-ah/2).toFixed(1)+'px';
+
+  var settled=Math.min(1,Math.max(0,1-Math.abs(T-s)*2.2));
+  floor.style.width=Math.max(40,cw*1.06)+'px';
+  floor.style.height=(H*0.28)+'px';
+  floor.style.top=(cy+chh/2-H*0.06)+'px';
+  floor.style.opacity=(0.26+0.6*settled).toFixed(2);
+
+  var onC=!dragging&&settled>0.85&&mx>0&&cw>0&&
+          Math.abs(mx-BW/2)<cw/2&&Math.abs(my-cy)<chh/2+10;
+  hint.classList.toggle('on',!!onC);
+  if(onC){hint.style.left=(BW/2)+'px';hint.style.top=(cy-chh/2-22)+'px';}
+}
+
+function setCap(i){
+  if(i===capIdx||!LIST[i])return;
+  capIdx=i;
+  tSpan.textContent=LIST[i].t;cSpan.textContent=LIST[i].ct;
+  num.textContent=('0'+(i+1)).slice(-2)+' / '+('0'+N).slice(-2);
+}
+
+function go(d){if(N>1)T=Math.round(T)+d;}
+bPrev.addEventListener('click',function(){go(-1);});
+bNext.addEventListener('click',function(){go(1);});
+wrap.addEventListener('keydown',function(e){
+  if(e.key==='ArrowLeft'){go(-1);e.preventDefault();}
+  else if(e.key==='ArrowRight'){go(1);e.preventDefault();}
+});
+
+var wt=null;
+shelf.addEventListener('wheel',function(e){
+  if(N<2)return;
+  if(Math.abs(e.deltaX)<=Math.abs(e.deltaY))return;
+  T+=e.deltaX/(P*4)*0.5;
+  e.preventDefault();
+  clearTimeout(wt);wt=setTimeout(function(){T=Math.round(T);},160);
+},{passive:false});
+
+var px0=0,py0=0,T0=0,down=false,axis=0;
+shelf.addEventListener('pointerdown',function(e){
+  if(N<2)return;
+  down=true;moved=0;axis=0;px0=e.clientX;py0=e.clientY;T0=T;
+});
+shelf.addEventListener('pointermove',function(e){
+  var rb=wrap.getBoundingClientRect();
+  mx=e.clientX-rb.left;my=e.clientY-rb.top;
+  if(!down)return;
+  var dx=e.clientX-px0,dy=e.clientY-py0;
+  if(!axis&&(Math.abs(dx)>6||Math.abs(dy)>6))axis=Math.abs(dx)>Math.abs(dy)?1:2;
+  if(axis===1){
+    if(!dragging){dragging=true;shelf.classList.add('dg');
+      try{shelf.setPointerCapture(e.pointerId);}catch(err){}}
+    moved=1;T=T0-dx/(P*2.2);
+  }
+});
+function up(){
+  down=false;axis=0;
+  if(dragging){dragging=false;shelf.classList.remove('dg');T=Math.round(T);}
+  setTimeout(function(){moved=0;},40);
+}
+addEventListener('pointerup',up);addEventListener('pointercancel',up);
+wrap.addEventListener('mouseleave',function(){mx=-1;my=-1;});
+
+ticks.addEventListener('click',function(e){
+  if(N<2)return;
+  var b=ticks.getBoundingClientRect(),p=(e.clientX-b.left)/b.width;
+  var w2=Math.max(0,Math.min(N-1,Math.floor(p*N)));
+  var cur=((Math.round(s)%N)+N)%N,d=w2-cur;
+  if(d>N/2)d-=N;if(d<-N/2)d+=N;
+  T=Math.round(s)+d;
+});
+
+addEventListener('resize',function(){if(N)metrics();});
+window.__shSync=build;
+build();
 })();
 </script>
 </body>
