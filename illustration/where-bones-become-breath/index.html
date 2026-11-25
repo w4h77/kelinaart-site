@@ -592,13 +592,17 @@ wrap.addEventListener('keydown',function(e){
   else if(e.key==='ArrowRight'){go(1);e.preventDefault();}
 });
 
-var wt=null;
+var wt=null,wAcc=0,wStart=0;
 shelf.addEventListener('wheel',function(e){
   if(N<2)return;
+  var k=e.deltaMode===1?16:(e.deltaMode===2?BW:1),dx=e.deltaX*k;
   if(Math.abs(e.deltaX)<=Math.abs(e.deltaY))return;
-  T+=e.deltaX/(P*4)*0.5;
   e.preventDefault();
-  clearTimeout(wt);wt=setTimeout(function(){T=Math.round(T);},160);
+  if(!wt){wAcc=0;wStart=Math.round(T);}
+  wAcc+=dx;T+=dx/(P*4)*0.5;
+  clearTimeout(wt);wt=setTimeout(function(){wt=null;var r=Math.round(T);
+    /* short swipes (Windows touchpads send small steps) still move one work */
+    if(r===wStart&&Math.abs(wAcc)>=24)r=wStart+(wAcc>0?1:-1);T=r;},160);
 },{passive:false});
 
 var px0=0,py0=0,T0=0,down=false,axis=0;
